@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 
 export default function Navbar() {
@@ -6,20 +7,23 @@ export default function Navbar() {
     <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               OrthoBoost
             </span>
-          </div>
+          </Link>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition">Services</a>
+            <Link to="/services" className="text-gray-700 hover:text-blue-600 transition">Services</Link>
             <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition">How It Works</a>
             <a href="#results" className="text-gray-700 hover:text-blue-600 transition">Results</a>
             <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
-            <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:opacity-90 transition">
+            <Link 
+              to="/schedule"
+              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:opacity-90 transition"
+            >
               <Phone size={18} />
               <span>Book a Call</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
