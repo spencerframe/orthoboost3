@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PhoneCall, Users, Calendar, Award, Clock, Bot } from 'lucide-react';
+import { Award, Clock, Bot } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white">
+    <div className="pt-36 pb-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -14,11 +14,11 @@ export default function Hero() {
         >
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Transform Your Orthodontic Practice with
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 pb-3">
               Doctor-Driven Marketing
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto -mt-3">
             Join 300+ successful orthodontic practices across the US and Canada. Our comprehensive solution combines expert marketing with 24/7 AI-powered lead conversion.
           </p>
           
