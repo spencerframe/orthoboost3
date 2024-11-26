@@ -9,6 +9,7 @@ import CTA from './components/CTA';
 import Services from './components/Services';
 import ServicePage from './pages/ServicePage';
 import SchedulePage from './pages/SchedulePage';
+import HowItWorksPage from './pages/HowItWorksPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           } />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
         </Routes>
       </div>
     </BrowserRouter>

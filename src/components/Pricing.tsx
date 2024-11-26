@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, AlertCircle, Building2, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Pricing() {
   return (
@@ -57,9 +58,9 @@ export default function Pricing() {
                 <span>Self-qualifying chatbot</span>
               </li>
             </ul>
-            <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+            <Link to="/schedule" className="block w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition text-center">
               Get Started
-            </button>
+            </Link>
           </motion.div>
 
           {/* Growth Plan */}
@@ -102,9 +103,9 @@ export default function Pricing() {
                 <span>Multi-location management</span>
               </li>
             </ul>
-            <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
-              Contact Sales
-            </button>
+            <Link to="/schedule" className="block w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition text-center">
+              Get Started
+            </Link>
           </motion.div>
 
           {/* Scale Plan */}
@@ -142,9 +143,9 @@ export default function Pricing() {
                 <span>Strategic growth planning</span>
               </li>
             </ul>
-            <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
-              Contact Sales
-            </button>
+            <Link to="/schedule" className="block w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition text-center">
+              Get Started
+            </Link>
           </motion.div>
         </div>
 
