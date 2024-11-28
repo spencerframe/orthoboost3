@@ -1,15 +1,15 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Process from './components/Process';
-import Results from './components/Results';
-import Pricing from './components/Pricing';
-import CTA from './components/CTA';
-import Services from './components/Services';
+import Navbar from './components/bolt/Navbar';
+import Hero from './components/bolt/Hero';
+import Process from './components/bolt/Process';
+import Results from './components/bolt/Results';
+import Pricing from './components/bolt/Pricing';
+import CTA from './components/bolt/CTA';
+import Services from './components/bolt/Services';
 import ServicePage from './pages/ServicePage';
 import SchedulePage from './pages/SchedulePage';
 import HowItWorksPage from './pages/HowItWorksPage';
+import Reviews from './components/custom/Reviews';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
               <Process />
               <Results />
               <Pricing />
+              <Reviews />
               <CTA />
             </>
           } />
