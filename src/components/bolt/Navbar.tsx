@@ -16,7 +16,7 @@ export default function Navbar() {
             <Link to="/services" className="text-gray-700 hover:text-blue-600 transition">Services</Link>
             <Link to="/how-it-works" className="text-gray-700 hover:text-blue-600 transition">How It Works</Link>
             <a href="#results" className="text-gray-700 hover:text-blue-600 transition">Results</a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+            <a href="/pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
             <Link 
               to="/schedule"
               className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:opacity-90 transition"

@@ -10,6 +10,7 @@ import ServicePage from './pages/ServicePage';
 import SchedulePage from './pages/SchedulePage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import Reviews from './components/custom/Reviews';
+import PricingPage from './pages/PricingPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/services" element={<ServicePage />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
         </Routes>
       </div>
     </BrowserRouter>
