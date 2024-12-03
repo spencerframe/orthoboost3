@@ -18,9 +18,9 @@ export default function Affordability() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600/20 mb-6">
+          {/* <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600/20 mb-6">
             <DollarSign className="w-8 h-8 text-blue-400" />
-          </div>
+          </div> */}
           <h2 className="text-4xl font-bold text-white mb-6">
             Maximize Your ROI
           </h2>
@@ -47,19 +47,19 @@ export default function Affordability() {
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img src="src/lib/hp.png" alt="Agency A" />
                 </div>
-                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 1</span>
+                <span className="pl-2 text-xl text-gray-300">Creative Agency - Break the bank 😵</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img src="src/lib/nc.png" alt="Agency A" />
                 </div>
-                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 2</span>
+                <span className="pl-2 text-xl text-gray-300">Marketing Agency - Very pricey 😓</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img src="src/lib/om.png" alt="Agency A" />
                 </div>
-                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 3</span>
+                <span className="pl-2 text-xl text-gray-300">Marketing Agency - Expensive 😲</span>
               </div>
             </div>
           </motion.div>
