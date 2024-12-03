@@ -14,13 +14,14 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Transform Your Orthodontic Practice with
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 pb-3">
-              Doctor-Driven Marketing
+            Transform Your Practice with
+            <span className="block text-4xl md:text-5xl mt-2">More New Patients Than Ever Before</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 pb-3 mt-2">
+              100% Guaranteed
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto -mt-3">
-            Join 300+ successful orthodontic practices across the US and Canada. Our comprehensive solution combines expert marketing with 24/7 AI-powered lead conversion.
+            Join 300+ successful orthodontic practices across the US and Canada. Our comprehensive solution combines expert marketing with 24/7 scheduling to ensure no lead ever slips through the cracks.
           </p>
           
           <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">
@@ -44,15 +45,15 @@ export default function Hero() {
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Clock className="text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">24/7 Coverage</h3>
-              <p className="text-gray-600">Never miss a lead with our AI-powered response system</p>
+              <h3 className="text-lg font-semibold mb-2">24/7 Scheduling</h3>
+              <p className="text-gray-600">Never chase leads again - 5-minute response time guaranteed</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Bot className="text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Smart Qualification</h3>
-              <p className="text-gray-600">AI chatbot pre-qualifies leads for higher conversion</p>
+              <p className="text-gray-600">Pre-qualified leads for higher conversion rates</p>
             </div>
           </div>
         </motion.div>

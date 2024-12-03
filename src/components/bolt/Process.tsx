@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, PhoneCall, CalendarCheck, TrendingUp } from 'lucide-react';
+import { 
+  Target, 
+  PhoneCall, 
+  CalendarCheck, 
+  TrendingUp 
+} from 'lucide-react';
 
 export default function Process() {
   return (
@@ -26,12 +31,12 @@ export default function Process() {
             {
               icon: Target,
               title: "Targeted Campaigns",
-              description: "We create and manage social media campaigns targeting your ideal patients"
+              description: "We create and manage campaigns targeting your ideal patients across Google and social media"
             },
             {
               icon: PhoneCall,
-              title: "Rapid Follow-up",
-              description: "Our team makes 6-10 calls within 72 hours of lead generation"
+              title: "5-Minute Response",
+              description: "Every lead is contacted within 5 minutes - even during holidays. No more chasing leads!"
             },
             {
               icon: CalendarCheck,

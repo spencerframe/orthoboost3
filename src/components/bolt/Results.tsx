@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, Calendar, DollarSign } from 'lucide-react';
+import CountUp from 'react-countup';
 
 export default function Results() {
   return (
@@ -22,37 +23,68 @@ export default function Results() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl"
+          >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
               <TrendingUp className="text-blue-600" />
             </div>
-            <h3 className="text-4xl font-bold text-gray-900 mb-2">85%</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-2">
+              <CountUp end={85} suffix="%" duration={2} />
+            </h3>
             <p className="text-gray-600">Higher conversion rate vs. industry average</p>
-          </div>
+          </motion.div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl"
+          >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
               <Users className="text-blue-600" />
             </div>
-            <h3 className="text-4xl font-bold text-gray-900 mb-2">250+</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-2">
+              <CountUp end={250} suffix="+" duration={2} />
+            </h3>
             <p className="text-gray-600">New patients scheduled monthly per practice</p>
-          </div>
+          </motion.div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl"
+          >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
               <Calendar className="text-blue-600" />
             </div>
-            <h3 className="text-4xl font-bold text-gray-900 mb-2">24hrs</h3>
-            <p className="text-gray-600">Average time to first appointment scheduled</p>
-          </div>
+            <h3 className="text-4xl font-bold text-gray-900 mb-2">
+              <CountUp end={5} suffix="min" duration={2} />
+            </h3>
+            <p className="text-gray-600">Average response time for new leads</p>
+          </motion.div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl"
+          >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
               <DollarSign className="text-blue-600" />
             </div>
-            <h3 className="text-4xl font-bold text-gray-900 mb-2">3.5x</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-2">
+              <CountUp end={5} suffix="X" duration={2} />
+            </h3>
             <p className="text-gray-600">Average ROI for our partner practices</p>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-16 bg-white rounded-2xl shadow-xl overflow-hidden">

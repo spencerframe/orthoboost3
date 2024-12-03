@@ -8,53 +8,55 @@ import {
   PhoneCall,
   CalendarCheck,
   Bot,
-  ArrowRight
+  ArrowRight,
+  Search,
+  Video
 } from 'lucide-react';
 
 export default function HowItWorksPage() {
   const steps = [
     {
-      icon: Target,
+      icon: Search,
       title: "Strategic Campaign Creation",
-      description: "We develop targeted social media campaigns across TikTok, Facebook, and Instagram to reach potential patients in your area.",
+      description: "We develop targeted Google Ads campaigns to reach potential patients actively searching for orthodontic treatment.",
       details: [
-        "Demographic targeting",
-        "Custom audience creation",
-        "Compelling ad creative",
+        "Local market targeting",
+        "Keyword optimization",
+        "Compelling ad copy",
         "A/B testing"
       ]
     },
     {
-      icon: Users,
-      title: "Lead Generation",
-      description: "Our proven landing pages and ad funnels capture interested prospects and begin the qualification process.",
+      icon: Video,
+      title: "Social Media Marketing",
+      description: "Strategic campaigns across TikTok, Facebook, and Instagram to showcase your practice and attract ideal patients.",
       details: [
-        "High-converting landing pages",
-        "Mobile-optimized design",
-        "Clear call-to-actions",
-        "Trust indicators"
-      ]
-    },
-    {
-      icon: Bot,
-      title: "24/7 AI Coverage",
-      description: "Never miss a lead with our AI Voice Agent handling calls and chatbot qualifying leads around the clock.",
-      details: [
-        "After-hours coverage",
-        "Holiday coverage",
-        "Initial qualification",
-        "Instant responses"
+        "Platform-specific content",
+        "Targeted demographics",
+        "Engagement optimization",
+        "Brand building"
       ]
     },
     {
       icon: PhoneCall,
-      title: "Rapid Follow-up",
-      description: "Our team makes 6-10 calls within 72 hours to connect with every lead and schedule consultations.",
+      title: "24/7 Scheduling",
+      description: "Never miss a lead with our round-the-clock scheduling team responding within 5 minutes - even on holidays.",
+      details: [
+        "5-minute response time",
+        "Holiday coverage",
+        "No missed opportunities",
+        "Instant engagement"
+      ]
+    },
+    {
+      icon: Users,
+      title: "Expert Follow-up",
+      description: "Our dedicated team makes 6-10 calls within 72 hours to connect with every lead and schedule consultations.",
       details: [
         "Multiple contact attempts",
-        "Professional call scripts",
+        "Professional scripts",
         "Objection handling",
-        "Value proposition delivery"
+        "Value communication"
       ]
     },
     {
@@ -69,7 +71,7 @@ export default function HowItWorksPage() {
       ]
     },
     {
-      icon: Bot,
+      icon: Target,
       title: "Performance Tracking",
       description: "Monitor your ROI and campaign performance through our comprehensive analytics dashboard.",
       details: [
@@ -96,7 +98,7 @@ export default function HowItWorksPage() {
               How We Transform Your Practice
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our proven process combines strategic marketing with AI-powered lead conversion to deliver consistent results
+              Our proven process combines strategic marketing with expert lead conversion to deliver consistent results
             </p>
           </motion.div>
         </div>
@@ -113,18 +115,22 @@ export default function HowItWorksPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-8"
+                className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                  <step.icon className="text-blue-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mb-6 transform rotate-3">
+                  <div className="w-11 h-11 bg-white rounded-lg flex items-center justify-center transform -rotate-3">
+                    <step.icon className="text-blue-600" />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                  {step.title}
+                </h3>
                 <p className="text-gray-600 mb-6">{step.description}</p>
                 <ul className="space-y-3">
                   {step.details.map((detail, i) => (
                     <li key={i} className="flex items-center space-x-3">
                       <ArrowRight className="w-4 h-4 text-blue-600" />
-                      <span>{detail}</span>
+                      <span className="text-gray-700">{detail}</span>
                     </li>
                   ))}
                 </ul>

@@ -2,28 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  LayoutTemplate, 
-  MessageSquare, 
+  Search,
+  MessageSquare,
   Video,
-  PhoneCall
+  PhoneCall,
+  Clock
 } from 'lucide-react';
 
 export default function Services() {
   const services = [
+    {
+      icon: Search,
+      title: "Search Engine Advertising",
+      description: "Dominate Google search results with targeted ads and optimized landing pages that convert searchers into scheduled appointments."
+    },
     {
       icon: Video,
       title: "Social Media Marketing",
       description: "Strategic campaigns on TikTok, Facebook, and Instagram to reach your ideal patients where they spend their time."
     },
     {
-      icon: LayoutTemplate,
-      title: "Landing Page Creation",
-      description: "Conversion-optimized landing pages designed specifically to turn visitors into scheduled consultations."
-    },
-    {
-      icon: MessageSquare,
-      title: "AI-Powered Support",
-      description: "24/7 coverage with AI Voice Agent and chatbot to ensure no lead goes unattended, even after hours."
+      icon: Clock,
+      title: "24/7 Scheduling",
+      description: "Never chase leads again! Every inquiry is responded to within 5 minutes - even on holidays. No lead ever slips through the cracks."
     },
     {
       icon: PhoneCall,
@@ -50,7 +51,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid lg:grid-cols-4 gap-8 mb-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -58,13 +59,16 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="relative group"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <service.icon className="text-blue-600" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform transition-transform group-hover:scale-[1.02]" />
+              <div className="relative bg-white p-8 rounded-2xl transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                  <service.icon className="text-blue-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
             </motion.div>
           ))}
         </div>

@@ -1,39 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  LayoutTemplate, 
-  Video, 
-  Facebook, 
-  Instagram, 
-  MessageSquare, 
-  Bot, 
-  PhoneCall, 
-  LineChart,
-  Headphones,
-  Users,
-  Clock,
+  Search,
+  Video,
+  ArrowRight,
+  PhoneCall,
   CheckCircle
 } from 'lucide-react';
 
 export default function ServicePage() {
-  const features = [
-    {
-      icon: Users,
-      title: "Doctor-Driven Marketing",
-      description: "Partner with an Orthodontist who grew from 1 to 7 locations in 5 years. Benefit from proven marketing strategies that actually work in orthodontic practices."
-    },
-    {
-      icon: Clock,
-      title: "24/7 Coverage",
-      description: "Never miss a lead with our AI Voice Agent handling inbound calls and chatbot qualifying leads, even during after hours and holidays."
-    },
-    {
-      icon: CheckCircle,
-      title: "Action-Based Guarantee",
-      description: "If we can't get you a positive ROI in 3 months, we work for free until you do. That's our commitment to your success."
-    }
-  ];
-
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -46,158 +21,165 @@ export default function ServicePage() {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Complete Orthodontic Marketing Solution
+              We Handle Everything So You Don't Have To
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              15+ years of orthodontic marketing experience, serving 300+ practices across US and Canada
+              Focus on providing exceptional patient care while we manage your entire marketing and lead conversion process
             </p>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white p-6 rounded-xl shadow-md"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <feature.icon className="text-blue-600" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Main Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Landing Page Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                  <LayoutTemplate className="text-blue-600" />
+          {/* Search and Social Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
+            {/* Search Engine Ads */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mb-6 transform rotate-3">
+                <div className="w-11 h-11 bg-white rounded-lg flex items-center justify-center transform -rotate-3">
+                  <Search className="text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-bold mb-6">Custom Landing Page Design</h2>
-                <p className="text-gray-600 mb-6">
-                  We craft laser-focused landing pages with one clear objective: capturing new patient leads who are eager to schedule their free consultation.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Conversion-optimized design</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Mobile-first approach</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Clear call-to-actions</span>
-                  </li>
-                </ul>
               </div>
-              <div className="bg-blue-50 rounded-xl p-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
-                  alt="Landing Page Design"
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-            </div>
-          </motion.div>
+              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Search Engine Advertising
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Dominate Google search results with targeted ads that convert searchers into scheduled appointments.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Strategic keyword targeting</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Conversion-optimized campaigns</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Local market dominance</span>
+                </li>
+              </ul>
+            </motion.div>
 
-          {/* Social Media Advertising */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 bg-blue-50 rounded-xl p-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80"
-                  alt="Social Media Advertising"
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="flex space-x-4 mb-6">
+            {/* Social Media Marketing */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mb-6 transform rotate-3">
+                <div className="w-11 h-11 bg-white rounded-lg flex items-center justify-center transform -rotate-3">
                   <Video className="text-blue-600" />
-                  <Facebook className="text-blue-600" />
-                  <Instagram className="text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-bold mb-6">Strategic Social Media Advertising</h2>
-                <p className="text-gray-600 mb-6">
-                  We launch targeted campaigns on TikTok, Facebook, and Instagram to reach potential patients where they spend their time.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Proven ad templates</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Demographic targeting</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Performance monitoring</span>
-                  </li>
-                </ul>
               </div>
-            </div>
-          </motion.div>
+              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Social Media Marketing
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Strategic campaigns on TikTok, Facebook, and Instagram to reach potential patients where they spend their time.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Engaging content creation</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Platform-specific strategies</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <ArrowRight className="text-blue-600 w-5 h-5" />
+                  <span>Targeted audience reach</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
 
-          {/* Lead Follow-up */}
+          {/* Comprehensive Lead Management */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 p-12 rounded-2xl text-white"
           >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex space-x-4 mb-6">
-                  <Bot className="text-blue-600" />
-                  <PhoneCall className="text-blue-600" />
-                  <Headphones className="text-blue-600" />
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <PhoneCall className="w-8 h-8" />
                 </div>
-                <h2 className="text-3xl font-bold mb-6">Comprehensive Lead Management</h2>
-                <p className="text-gray-600 mb-6">
-                  Our dedicated team ensures every lead is contacted and converted, with AI-powered support for 24/7 coverage.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>6-10 follow-up calls within 72 hours</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>AI Voice Agent for after-hours</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="text-green-500" />
-                    <span>Direct scheduling integration</span>
-                  </li>
-                </ul>
               </div>
-              <div className="bg-blue-50 rounded-xl p-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80"
-                  alt="Lead Follow-up"
-                  className="rounded-lg shadow-lg"
-                />
+              <h2 className="text-3xl font-bold text-center mb-8">
+                Industry-Leading Lead Management
+              </h2>
+              <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+                Our comprehensive lead management system combines 24/7 scheduling with expert follow-up to ensure no opportunity is ever missed. We handle everything so you can focus on providing exceptional patient care.
+              </p>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">24/7 Scheduling Excellence</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>5-minute response time guaranteed - even on holidays</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Never miss another lead opportunity</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Seamless practice software integration</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Automated appointment reminders</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Professional Follow-Up</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>6-10 strategic follow-up calls within 72 hours</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Expert objection handling</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Value proposition communication</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <span>Conversion rate optimization</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-12 grid md:grid-cols-3 gap-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <h4 className="text-lg font-semibold mb-3">Proven Results</h4>
+                  <p>85% higher conversion rates compared to industry average</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <h4 className="text-lg font-semibold mb-3">Dedicated Support</h4>
+                  <p>Expert team focused solely on orthodontic practices</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <h4 className="text-lg font-semibold mb-3">Full Transparency</h4>
+                  <p>Detailed reporting and performance tracking</p>
+                </div>
               </div>
             </div>
           </motion.div>

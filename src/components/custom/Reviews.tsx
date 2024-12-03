@@ -3,39 +3,45 @@ import Marquee from "@/components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    // username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    id: 1,
+    name: "Dr. Sarah Chen",
+    location: "Phoenix, AZ",
+    body: "Their follow-up process is incredible. We went from converting 20% of leads to over 45% in just two months.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
   {
-    name: "Jill",
-    // username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    id: 2,
+    name: "Dr. Michael Roberts",
+    location: "Denver, CO",
+    body: "The scheduling system has transformed our practice. We're now capturing leads we used to miss completely.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
   {
-    name: "John",
-    // username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    id: 3,
+    name: "Dr. Emily Thompson",
+    location: "Austin, TX",
+    body: "The ROI guarantee gave us confidence to try their service, but their results made us stay.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
   {
-    name: "Jane",
-    // username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    id: 4,
+    name: "Dr. James Wilson",
+    location: "Seattle, WA",
+    body: "Best marketing investment we've made. The lead quality and conversion rates are exceptional.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
   {
-    name: "Jenny",
-    // username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    id: 5,
+    name: "Dr. Lisa Anderson",
+    location: "Chicago, IL",
+    body: "Their 5-minute response time is a game-changer. Our conversion rates have doubled.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
   {
-    name: "James",
-    // username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    id: 6,
+    name: "Dr. David Martinez",
+    location: "Miami, FL",
+    body: "The comprehensive follow-up system ensures no lead ever falls through the cracks.",
     img: "https://static.cdnlogo.com/logos/g/35/google-icon.svg",
   },
 ];
@@ -46,34 +52,26 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({
   img,
   name,
-  username,
+  location,
   body,
 }: {
   img: string;
   name: string;
-  username: string;
+  location: string;
   body: string;
 }) => {
   return (
-    <figure
-      className={cn(
-        "relative w-64 overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-gray-950/[.1]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="25" height="25" alt="" src={img} />
+    <figure className="relative w-[350px] overflow-hidden rounded-xl bg-white p-6 shadow-lg mx-4">
+      <div className="flex flex-row items-center gap-4">
+        <img className="h-10 w-10" width="40" height="40" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-lg font-semibold text-gray-900">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-sm text-gray-600">{location}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-4 text-gray-700">{body}</blockquote>
     </figure>
   );
 };
@@ -81,29 +79,29 @@ const ReviewCard = ({
 const MarqueeDemo = () => {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:40s]">
         {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.id} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:40s]">
         {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.id} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white" />
     </div>
   );
-}
+};
 
-export default () => {
+export default function Reviews() {
   return (
-    <section className="bg-white dark:bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-4xl font-bold text-center mb-8">What Our Customers Are Saying</h2>
+    <section className="bg-gradient-to-b from-white to-blue-50 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
         <MarqueeDemo />
       </div>
     </section>
   );
-};
+}
