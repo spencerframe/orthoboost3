@@ -9,6 +9,7 @@ import {
   Clock
 } from 'lucide-react';
 import { LeadSources } from '../custom/LeadSources';
+import { MarketingSolutionsVideo } from '../custom/MarketingSolutionsVideo';
 
 export default function Services() {
   const services = [
@@ -52,8 +53,10 @@ export default function Services() {
           </p>
         </motion.div>
 
+        <MarketingSolutionsVideo />
+
         
-        <div className="grid lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid lg:grid-cols-4 gap-8 my-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -63,8 +66,8 @@ export default function Services() {
               transition={{ delay: index * 0.2 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform transition-transform group-hover:scale-[1.02]" />
-              <div className="relative h-full bg-white p-8 rounded-2xl transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform transition-transform group-hover:scale-[1.03]" />
+              <div className="relative h-full bg-white p-8 rounded-2xl transform -translate-y-2 -translate-x-2 transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="text-blue-600" />
                 </div>
