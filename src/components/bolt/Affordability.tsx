@@ -44,22 +44,22 @@ export default function Affordability() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full filter blur-sm" />
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img src="src/lib/hp.png" alt="Agency A" />
                 </div>
-                <span className="text-gray-300">Premium Agency A</span>
+                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 1</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full filter blur-sm" />
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img src="src/lib/nc.png" alt="Agency A" />
                 </div>
-                <span className="text-gray-300">Premium Agency B</span>
+                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 2</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full filter blur-sm" />
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img src="src/lib/om.png" alt="Agency A" />
                 </div>
-                <span className="text-gray-300">Premium Agency C</span>
+                <span className="pl-2 text-xl text-gray-300">Expensive Marketing Agency 3</span>
               </div>
             </div>
           </motion.div>

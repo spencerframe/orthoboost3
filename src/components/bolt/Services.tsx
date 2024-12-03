@@ -8,6 +8,7 @@ import {
   PhoneCall,
   Clock
 } from 'lucide-react';
+import { LeadSources } from '../custom/LeadSources';
 
 export default function Services() {
   const services = [
@@ -51,6 +52,7 @@ export default function Services() {
           </p>
         </motion.div>
 
+        
         <div className="grid lg:grid-cols-4 gap-8 mb-12">
           {services.map((service, index) => (
             <motion.div
@@ -62,7 +64,7 @@ export default function Services() {
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform transition-transform group-hover:scale-[1.02]" />
-              <div className="relative bg-white p-8 rounded-2xl transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2">
+              <div className="relative h-full bg-white p-8 rounded-2xl transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="text-blue-600" />
                 </div>
