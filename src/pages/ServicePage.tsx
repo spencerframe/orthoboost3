@@ -18,7 +18,7 @@ export default function ServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               We Handle Everything So You Don't Have To
@@ -31,10 +31,10 @@ export default function ServicePage() {
       </section>
 
       {/* Main Services */}
-      <section className="py-20">
+      <section className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Search and Social Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
             {/* Search Engine Ads */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
