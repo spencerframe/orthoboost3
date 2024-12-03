@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Award, Clock, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
+import BlurIn from "../magicui/blur-in";
 
 export default function Hero() {
   return (
     <div className='pt-36 pb-20 bg-gradient-to-b from-blue-50 to-white'>
-      
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,25 +31,23 @@ export default function Hero() {
             <button className='bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition'>View Success Stories</button>
           </div>
 
-          
-
           {/* Competitive Advantages */}
           <div className='grid md:grid-cols-3 gap-8 max-w-4xl mx-auto'>
-            <div className='bg-white p-6 rounded-xl shadow-lg'>
+            <div className='bg-white p-6 rounded-xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.1)]'>
               <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                 <Award className='text-blue-600' />
               </div>
               <h3 className='text-lg font-semibold mb-2'>15+ Years Experience</h3>
               <p className='text-gray-600'>Orthodontic marketing experts with proven results</p>
             </div>
-            <div className='bg-white p-6 rounded-xl shadow-lg'>
+            <div className='bg-white p-6 rounded-xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.1)]'>
               <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                 <Clock className='text-blue-600' />
               </div>
               <h3 className='text-lg font-semibold mb-2'>24/7 Scheduling</h3>
               <p className='text-gray-600'>Never chase leads again - 5-minute response time guaranteed</p>
             </div>
-            <div className='bg-white p-6 rounded-xl shadow-lg'>
+            <div className='bg-white p-6 rounded-xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.1)]'>
               <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                 <Bot className='text-blue-600' />
               </div>

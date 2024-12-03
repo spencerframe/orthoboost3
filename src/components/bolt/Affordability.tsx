@@ -70,7 +70,7 @@ export default function Affordability() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform rotate-3" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl transform rotate-6" />
             <div className="relative bg-white p-8 rounded-2xl">
               <h4 className="text-2xl font-bold mb-4">What You Get:</h4>
               <ul className="space-y-4">

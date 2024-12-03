@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, Calendar, DollarSign } from 'lucide-react';
 import CountUp from 'react-countup';
+import NumberTicker from '../magicui/number-ticker';
 
 export default function Results() {
   return (
@@ -33,7 +34,7 @@ export default function Results() {
               <TrendingUp className="text-blue-600" />
             </div>
             <h3 className="text-4xl font-bold text-gray-900 mb-2">
-              <CountUp end={85} suffix="%" duration={2} />
+              <NumberTicker value={85} />%
             </h3>
             <p className="text-gray-600">Higher conversion rate vs. industry average</p>
           </motion.div>
@@ -49,7 +50,7 @@ export default function Results() {
               <Users className="text-blue-600" />
             </div>
             <h3 className="text-4xl font-bold text-gray-900 mb-2">
-              <CountUp end={250} suffix="+" duration={2} />
+              <NumberTicker value={250} />+
             </h3>
             <p className="text-gray-600">New patients scheduled monthly per practice</p>
           </motion.div>
@@ -65,7 +66,7 @@ export default function Results() {
               <Calendar className="text-blue-600" />
             </div>
             <h3 className="text-4xl font-bold text-gray-900 mb-2">
-              <CountUp end={5} suffix="min" duration={2} />
+              <NumberTicker value={5} />min
             </h3>
             <p className="text-gray-600">Average response time for new leads</p>
           </motion.div>
@@ -81,7 +82,7 @@ export default function Results() {
               <DollarSign className="text-blue-600" />
             </div>
             <h3 className="text-4xl font-bold text-gray-900 mb-2">
-              <CountUp end={5} suffix="X" duration={2} />
+            <NumberTicker value={5} />x
             </h3>
             <p className="text-gray-600">Average ROI for our partner practices</p>
           </motion.div>

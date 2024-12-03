@@ -25,9 +25,9 @@ function App() {
                 <Hero />
                 <Affordability />
                 <Services />
+                <Reviews />
                 <Process />
                 <Results />
-                <Reviews />
                 <CTA />
               </>
             }
