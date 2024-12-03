@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./components/bolt/Navbar";
 import Hero from "./components/bolt/Hero";
 import Process from "./components/bolt/Process";
@@ -9,12 +10,23 @@ import Affordability from "./components/bolt/Affordability";
 import ServicePage from "./pages/ServicePage";
 import SchedulePage from "./pages/SchedulePage";
 import HowItWorksPage from "./pages/HowItWorksPage";
-import Reviews from "./components/custom/Reviews";
+import ReviewsMarquee from "./components/custom/ReviewsMarquee";
 import PricingPage from "./pages/PricingPage";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className='min-h-screen bg-white'>
         <Navbar />
         <Routes>
@@ -25,7 +37,7 @@ function App() {
                 <Hero />
                 <Affordability />
                 <Services />
-                <Reviews />
+                <ReviewsMarquee />
                 <Process />
                 <Results />
                 <CTA />
