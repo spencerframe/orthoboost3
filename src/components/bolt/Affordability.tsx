@@ -45,19 +45,19 @@ export default function Affordability() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
-                  <img src="src/lib/hp.png" alt="Agency A" />
+                  <img src="/images/hp.png" alt="Agency A" />
                 </div>
                 <span className="pl-2 text-xl text-gray-300">Creative Agency - Break the bank 😵</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
-                  <img src="src/lib/nc.png" alt="Agency A" />
+                  <img src="/images/nc.png" alt="Agency A" />
                 </div>
                 <span className="pl-2 text-xl text-gray-300">Marketing Agency - Very pricey 😓</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 flex items-center justify-center">
-                  <img src="src/lib/om.png" alt="Agency A" />
+                  <img src="/images/om.png" alt="Agency A" />
                 </div>
                 <span className="pl-2 text-xl text-gray-300">Marketing Agency - Expensive 😲</span>
               </div>

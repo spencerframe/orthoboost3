@@ -38,7 +38,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/facebook.png'
+              src='/images/facebook.png'
               alt='facebook'
             />
           </Circle>
@@ -47,7 +47,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/instagram.png'
+              src='/images/instagram.png'
               alt='instagram'
             />
           </Circle>
@@ -58,7 +58,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/tiktok.png'
+              src='/images/tiktok.png'
               alt='tiktok'
             />
           </Circle>
@@ -67,7 +67,7 @@ export function LeadSources() {
             className='size-32 p-8'
           >
             <img
-              src='src/lib/orthoboost.png'
+              src='/images/orthoboost.png'
               alt='orthoboost'
             />
           </Circle>
@@ -76,7 +76,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/google.png'
+              src='/images/google.png'
               alt='google'
             />
           </Circle>
@@ -87,7 +87,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/calls.png'
+              src='/images/calls.png'
               alt='calls'
             />
           </Circle>
@@ -96,7 +96,7 @@ export function LeadSources() {
             className='size-16 p-3'
           >
             <img
-              src='src/lib/messenger.png'
+              src='/images/messenger.png'
               alt='messenger'
             />
           </Circle>
