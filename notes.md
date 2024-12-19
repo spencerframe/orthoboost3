@@ -1,0 +1,12 @@
+- Change OrthoBoost logo to a GHL computer screen
+- Take Dr. Ty's talking face image and make hero image (sharpen with AI, flip y-axis), copy Osborn media landing page
+- Schedule a strategy call button in red
+- Services page > New Lead Followup and scheduling
+  - Put Jess's picture up der
+  - spread out bullet points on two columns
+- Book a call page (inlude section of two results with the headline "See The Results", and a link to learn more going to the success stories page)
+- Fix scheduling embed (find previous code)
+- Add <script src="https://link.msgsndr.com/js/embed.js" type="text/javascript"></script>
+- Create Single Webinar Page
+  - Archive of each webinar
+  - Single thank you page for registering

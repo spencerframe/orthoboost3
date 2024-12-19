@@ -35,11 +35,11 @@ function App() {
             element={
               <>
                 <Hero />
-                <Affordability />
                 <Services />
                 <ReviewsMarquee />
-                <Process />
                 <Results />
+                <Affordability />
+                <Process />
                 <CTA />
               </>
             }

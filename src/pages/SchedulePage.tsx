@@ -43,13 +43,19 @@ export default function SchedulePage() {
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>Join 300+ successful orthodontic practices across US and Canada</p>
           </motion.div>
           <div className='bg-white rounded-xl shadow-lg p-4'>
-            <iframe
+            {/* <iframe
               src='https://koalendar.com/e/spencer-orthoboost?embed=true'
               width='100%'
               height='800px'
               frameBorder='0'
               title='Schedule Appointment'
-            />
+            /> */}
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/booking/bPDlxff02GMUs51bdeL0" 
+              width="100%"
+              height={800}
+              frameBorder="0"
+              id="msgsndr-calendar"></iframe>
           </div>
         </div>
       </section>

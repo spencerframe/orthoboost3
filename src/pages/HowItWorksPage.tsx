@@ -29,12 +29,12 @@ export default function HowItWorksPage() {
     {
       icon: Video,
       title: "Social Media Marketing",
-      description: "Strategic campaigns across TikTok, Facebook, and Instagram to showcase your practice and attract ideal patients.",
+      description: "Strategic campaigns across highest performing platforms such as TikTok, Facebook, and Instagram to showcase your practice and attract ideal patients.",
       details: [
-        "Platform-specific content",
+        "Scroll-stopping content",
         "Targeted demographics",
         "Engagement optimization",
-        "Brand building"
+        "Chatbot qualifying"
       ]
     },
     {
@@ -48,28 +48,28 @@ export default function HowItWorksPage() {
         "Instant engagement"
       ]
     },
-    {
-      icon: Users,
-      title: "Expert Follow-up",
-      description: "Our dedicated team makes 6-10 calls within 72 hours to connect with every lead and schedule consultations.",
-      details: [
-        "Multiple contact attempts",
-        "Professional scripts",
-        "Objection handling",
-        "Value communication"
-      ]
-    },
-    {
-      icon: CalendarCheck,
-      title: "Direct Scheduling",
-      description: "Qualified leads are scheduled directly into your practice management software.",
-      details: [
-        "Software integration",
-        "Real-time availability",
-        "Appointment reminders",
-        "Follow-up confirmation"
-      ]
-    },
+    // {
+    //   icon: Users,
+    //   title: "Expert Follow-up",
+    //   description: "Our dedicated team makes 6-10 calls within 72 hours to connect with every lead and schedule consultations.",
+    //   details: [
+    //     "Multiple contact attempts",
+    //     "Professional scripts",
+    //     "Objection handling",
+    //     "Value communication"
+    //   ]
+    // },
+    // {
+    //   icon: CalendarCheck,
+    //   title: "Direct Scheduling",
+    //   description: "Qualified leads are scheduled directly into your practice management software.",
+    //   details: [
+    //     "Software integration",
+    //     "Real-time availability",
+    //     "Appointment reminders",
+    //     "Follow-up confirmation"
+    //   ]
+    // },
     {
       icon: Target,
       title: "Performance Tracking",
