@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/navigation/ScrollToTop";
 import Navbar from "./components/bolt/Navbar";
 import Hero from "./components/bolt/Hero";
 import Process from "./components/bolt/Process";
@@ -13,16 +13,9 @@ import HowItWorksPage from "./pages/HowItWorksPage";
 import ReviewsMarquee from "./components/custom/ReviewsMarquee";
 import PricingPage from "./pages/PricingPage";
 import WebinarPage from "./pages/WebinarPage";
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
+import BlogListPage from "./pages/BlogListPage";
+import BlogPost from "./pages/BlogPost";
+import WebinarListPage from "./pages/WebinarListPage";
 
 function App() {
   return (
@@ -31,25 +24,25 @@ function App() {
       <div className='min-h-screen bg-white'>
         <Navbar />
         <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <Hero />
-                <Services />
-                <ReviewsMarquee />
-                <Results />
-                <Affordability />
-                <Process />
-                <PrimaryCTA />
-              </>
-            }
-          />
-          <Route path='/services' element={<ServicePage />} />
-          <Route path='/schedule' element={<SchedulePage />} />
-          <Route path='/how-it-works' element={<HowItWorksPage />} />
-          <Route path='/pricing' element={<PricingPage />} />
-          <Route path='/webinar' element={<WebinarPage />} />
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Services />
+              <ReviewsMarquee />
+              <Results />
+              <Affordability />
+              <Process />
+              <PrimaryCTA />
+            </>
+          } />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/webinars" element={<WebinarListPage />} />
+          <Route path="/webinars/:slug" element={<WebinarPage />} />
         </Routes>
       </div>
     </BrowserRouter>

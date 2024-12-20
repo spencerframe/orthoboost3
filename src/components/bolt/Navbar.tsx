@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { NavLink } from '@/components/navigation/NavLink';
 import { BookCallButton } from '@/components/navigation/BookCallButton';
 import { Logo } from '@/components/navigation/Logo';
+import { FreeStuffDropdown } from '@/components/navigation/FreeStuffDropdown';
 
 const navLinks = [
   { path: '/services', label: 'Services' },
@@ -27,6 +28,7 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <FreeStuffDropdown />
             <BookCallButton isActive={isActive('/schedule')} />
           </div>
         </div>
