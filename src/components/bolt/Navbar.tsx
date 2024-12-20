@@ -1,54 +1,33 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Phone } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useLocation } from 'react-router-dom';
+import { NavLink } from '@/components/navigation/NavLink';
+import { BookCallButton } from '@/components/navigation/BookCallButton';
+import { Logo } from '@/components/navigation/Logo';
+
+const navLinks = [
+  { path: '/services', label: 'Services' },
+  { path: '/how-it-works', label: 'How It Works' },
+];
 
 export default function Navbar() {
   const location = useLocation();
-
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
-
-  const navLinks = [
-    { path: '/services', label: 'Services' },
-    { path: '/how-it-works', label: 'How It Works' },
-  ];
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              OrthoBoost
-            </span>
-          </Link>
+          <Logo />
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <NavLink 
                 key={link.path}
                 to={link.path}
-                className={cn(
-                  "transition duration-200",
-                  isActive(link.path)
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-700 hover:text-blue-600"
-                )}
+                isActive={isActive(link.path)}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
-            <Link
-              to="/schedule"
-              className={cn(
-                "bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:opacity-90 transition",
-                isActive('/schedule') && "ring-2 ring-blue-400"
-              )}
-            >
-              <Phone size={18} />
-              <span>Book a Call</span>
-            </Link>
+            <BookCallButton isActive={isActive('/schedule')} />
           </div>
         </div>
       </div>
