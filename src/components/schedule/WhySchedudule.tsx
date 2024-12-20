@@ -1,9 +1,11 @@
-export default () => {
+import { motion } from "framer-motion";
+
+export default function WhySchedule() {
   const benefits = [
     {
       icon: "🎯",
       title: "Personalized Strategy",
-      description: "Get tailored solutions that fit your unique business needs"
+      description: "Get tailored solutions that fit your unique practice needs"
     },
     {
       icon: "⚡",
@@ -23,24 +25,28 @@ export default () => {
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">
+    <section className="py-12">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">
           Why Schedule a Call?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {benefits.map((benefit, index) => (
-            <div 
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
               <h3 className="font-semibold text-xl mb-2">{benefit.title}</h3>
               <p className="text-gray-600">{benefit.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}

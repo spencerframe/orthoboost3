@@ -12,6 +12,7 @@ import SchedulePage from "./pages/SchedulePage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import ReviewsMarquee from "./components/custom/ReviewsMarquee";
 import PricingPage from "./pages/PricingPage";
+import WebinarPage from "./pages/WebinarPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,22 +45,11 @@ function App() {
               </>
             }
           />
-          <Route
-            path='/services'
-            element={<ServicePage />}
-          />
-          <Route
-            path='/schedule'
-            element={<SchedulePage />}
-          />
-          <Route
-            path='/how-it-works'
-            element={<HowItWorksPage />}
-          />
-          <Route
-            path='/pricing'
-            element={<PricingPage />}
-          />
+          <Route path='/services' element={<ServicePage />} />
+          <Route path='/schedule' element={<SchedulePage />} />
+          <Route path='/how-it-works' element={<HowItWorksPage />} />
+          <Route path='/pricing' element={<PricingPage />} />
+          <Route path='/webinar' element={<WebinarPage />} />
         </Routes>
       </div>
     </BrowserRouter>

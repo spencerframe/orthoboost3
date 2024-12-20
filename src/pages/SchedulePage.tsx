@@ -4,16 +4,13 @@ import { Shield, CheckCircle2 } from "lucide-react";
 import ReviewsStatic from "@/components/custom/ReviewsStatic";
 import { useScript } from "@/hooks/useScript";
 import IframeResizer from "iframe-resizer-react";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import WhySchedudule from "@/components/schedule/WhySchedudule";
 
 export default function SchedulePage() {
-  // Load the scheduling widget script
   useScript("https://link.msgsndr.com/js/embed.js");
 
   return (
     <div className='pt-20'>
-      {/* Hero Section */}
       <section className='bg-gradient-to-b from-blue-50 to-white py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
@@ -25,22 +22,24 @@ export default function SchedulePage() {
             <h1 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>Schedule Your Strategy Call</h1>
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>Join 300+ successful orthodontic practices across US and Canada</p>
           </motion.div>
+          
           <div className='bg-white rounded-xl shadow-lg p-10'>
-            <div className='flex gap-10'>
-              <WhySchedudule />
-              <div className='relative px-10 rounded-xl shadow-lg'>
+            <div className='flex flex-col lg:flex-row gap-10'>
+              <div className='lg:w-1/2'>
+                <WhySchedudule />
+              </div>
+              <div className='lg:w-1/2'>
+                <div className='mb-8'>
+                  <img
+                    src='/images/tyler-loveall-headshot.png'
+                    alt='Dr. Tyler'
+                    className='w-full max-w-md mx-auto rounded-lg'
+                  />
+                </div>
                 <IframeResizer
                   src='https://api.leadconnectorhq.com/widget/booking/bPDlxff02GMUs51bdeL0'
-                  className='w-400 md:w-750 mx-auto -mb-48'
+                  className='w-full'
                   id='msgsndr-calendar'
-                />
-                <BorderBeam
-                  size={250}
-                  duration={15}
-                  borderWidth={8}
-                  colorFrom='#2563eb'
-                  colorTo='#06b6d4'
-                  delay={10}
                 />
               </div>
             </div>
@@ -49,7 +48,6 @@ export default function SchedulePage() {
       </section>
 
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        {/* Guarantee Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +70,6 @@ export default function SchedulePage() {
         </motion.div>
       </div>
 
-      {/* Reviews Section */}
       <section className='py-16 pb-32 bg-blue-50'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
