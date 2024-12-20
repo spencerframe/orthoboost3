@@ -4,7 +4,7 @@ import Navbar from "./components/bolt/Navbar";
 import Hero from "./components/bolt/Hero";
 import Process from "./components/bolt/Process";
 import Results from "./components/bolt/Results";
-import CTA from "./components/bolt/CTA";
+import { PrimaryCTA } from "./components/bolt/CTA";
 import Services from "./components/bolt/Services";
 import Affordability from "./components/bolt/Affordability";
 import ServicePage from "./pages/ServicePage";
@@ -40,7 +40,7 @@ function App() {
                 <Results />
                 <Affordability />
                 <Process />
-                <CTA />
+                <PrimaryCTA />
               </>
             }
           />

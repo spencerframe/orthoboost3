@@ -4,7 +4,7 @@ import { LeadSources } from '@/components/custom/LeadSources';
 import { MarketingService } from '@/components/services/MarketingService';
 import { LeadManagement } from '@/components/services/LeadManagement';
 import { ServiceHero } from '@/components/services/ServiceHero';
-import { ServiceCTA } from '@/components/services/ServiceCTA';
+import { PrimaryCTA } from '@/components/bolt/CTA';
 
 export default function ServicePage() {
   const marketingServices = [
@@ -36,7 +36,7 @@ export default function ServicePage() {
     <div className="pt-20">
       <ServiceHero />
       
-      <div className="py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <LeadSources />
       </div>
 
@@ -51,7 +51,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <ServiceCTA />
+      <PrimaryCTA />
     </div>
   );
 }

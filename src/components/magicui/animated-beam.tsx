@@ -19,6 +19,7 @@ export interface AnimatedBeamProps {
   gradientStopColor?: string;
   delay?: number;
   duration?: number;
+  repeatDelay?: number;
   startXOffset?: number;
   startYOffset?: number;
   endXOffset?: number;
@@ -33,6 +34,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   curvature = 0,
   reverse = false, // Include the reverse prop
   duration = Math.random() * 3 + 4,
+  repeatDelay = 0,
   delay = 0,
   pathColor = "gray",
   pathWidth = 2,
@@ -170,7 +172,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
             duration,
             ease: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
             repeat: Infinity,
-            repeatDelay: 0,
+            repeatDelay,
           }}
         >
           <stop stopColor={gradientStartColor} stopOpacity="0"></stop>

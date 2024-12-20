@@ -7,7 +7,7 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
   return (
     <div
       ref={ref}
-      className={cn("z-10 flex items-center justify-center rounded-full bg-white shadow-[0px_15px_40px_0px_rgba(0,0,0,0.1)]", className)}
+      className={cn("z-10 flex items-center justify-center rounded-full bg-white shadow-[0px_15px_40px_0px_rgba(0,0,0,0.15)]", className)}
     >
       {children}
     </div>
@@ -31,11 +31,11 @@ export function LeadSources() {
       className='relative flex w-full items-center justify-center'
       ref={containerRef}
     >
-      <div className='flex size-full flex-col max-w-xl items-stretch justify-between gap-5'>
+      <div className='flex size-full flex-col max-w-xl items-stretch justify-between'>
         <div className='flex flex-row items-center justify-between'>
           <Circle
             ref={div1Ref}
-            className='size-16 p-3'
+            className='size-16 p-3 -mb-12'
           >
             <img
               src='/images/facebook.png'
@@ -44,7 +44,7 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div5Ref}
-            className='size-16 p-3'
+            className='size-16 p-3 -mb-12'
           >
             <img
               src='/images/instagram.png'
@@ -64,10 +64,10 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div4Ref}
-            className='size-32 p-8'
+            className='size-48 p-0 rounded-full overflow-hidden'
           >
             <img
-              src='/images/orthoboost.png'
+              src='/images/laptop-on-desk.png'
               alt='orthoboost'
             />
           </Circle>
@@ -84,7 +84,7 @@ export function LeadSources() {
         <div className='flex flex-row items-center justify-between'>
           <Circle
             ref={div3Ref}
-            className='size-16 p-3'
+            className='size-16 p-3 -mt-12'
           >
             <img
               src='/images/calls.png'
@@ -93,7 +93,7 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div7Ref}
-            className='size-16 p-3'
+            className='size-16 p-3 -mt-12'
           >
             <img
               src='/images/messenger.png'
@@ -104,44 +104,74 @@ export function LeadSources() {
       </div>
 
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div1Ref}
         toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
+        curvature={-80}
+        endYOffset={-30}
       />
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div2Ref}
         toRef={div4Ref}
       />
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div3Ref}
         toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
+        curvature={80}
+        endYOffset={30}
       />
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div5Ref}
         toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
+        curvature={-80}
+        endYOffset={-30}
         reverse
       />
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div4Ref}
         reverse
       />
       <AnimatedBeam
+        delay={Math.random() * 1.5}
+        duration={18}
+        gradientStartColor={"#2563eb"}
+        gradientStopColor={"#06b6d4"}
+        repeatDelay={Math.random() * 2 - 16}
         containerRef={containerRef}
         fromRef={div7Ref}
         toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
+        curvature={80}
+        endYOffset={30}
         reverse
       />
     </div>
