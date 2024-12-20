@@ -24,21 +24,21 @@ export default function SchedulePage() {
           </motion.div>
           
           <div className='bg-white rounded-xl shadow-lg p-10'>
-            <div className='flex flex-col lg:flex-row gap-10'>
-              <div className='lg:w-1/2'>
+            <div className='flex flex-col-reverse sm:flex-row gap-10'>
+              <div className='sm:w-1/2'>
                 <WhySchedudule />
               </div>
-              <div className='lg:w-1/2'>
-                <div className='mb-8'>
+              <div className='sm:w-1/2'>
+                <div>
                   <img
                     src='/images/tyler-loveall-headshot.png'
                     alt='Dr. Tyler'
-                    className='w-full max-w-md mx-auto rounded-lg'
+                    className='rounded-full mx-auto w-20'
                   />
                 </div>
                 <IframeResizer
                   src='https://api.leadconnectorhq.com/widget/booking/bPDlxff02GMUs51bdeL0'
-                  className='w-full'
+                  className='w-full -mb-48'
                   id='msgsndr-calendar'
                 />
               </div>
