@@ -28,17 +28,15 @@ export function LeadManagement() {
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
           Our comprehensive lead management system combines 24/7 scheduling with expert follow-up to ensure no opportunity is ever missed.
         </p>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">24/7 Scheduling Excellence</h3>
-            <ul className="space-y-4">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+        <div>
+          <h3 className="text-xl font-semibold mb-6 text-center">24/7 Scheduling Excellence</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <CheckCircle className="w-5 h-5 mt-1 flex-shrink-0" />
+                <span>{feature}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
