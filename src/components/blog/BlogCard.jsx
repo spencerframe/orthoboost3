@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
-import { BlogMetadata } from '@/types/blog';
 import { formatDate } from '@/utils/blog-utils';
 
-interface BlogCardProps {
-  blog: BlogMetadata;
-}
-
-export function BlogCard({ blog }: BlogCardProps) {
+export function BlogCard({ blog }) {
   return (
     <Link to={`/blog/${blog.slug}`} className="group">
       <article className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">

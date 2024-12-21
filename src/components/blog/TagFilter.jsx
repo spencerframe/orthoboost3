@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
 
-interface TagFilterProps {
-  tags: string[];
-  selectedTags: string[];
-  onTagSelect: (tag: string) => void;
-}
-
-export function TagFilter({ tags, selectedTags, onTagSelect }: TagFilterProps) {
+export function TagFilter({ tags, selectedTags, onTagSelect }) {
   return (
     <div className="flex flex-wrap gap-2 mb-8">
       {tags.map((tag) => (

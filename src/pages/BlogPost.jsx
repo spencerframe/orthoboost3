@@ -2,14 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { formatDate } from '@/utils/blog-utils';
-import { BlogPost } from '@/types/blog';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
-  const [blog, setBlog] = useState<{ 
-    default: React.ComponentType;
-    metadata: BlogPost;
-  } | null>(null);
+  const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     const loadBlog = async () => {

@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { WebinarMetadata } from '@/types/webinar';
 import { getAllWebinars } from '@/utils/webinar-utils';
 import { WebinarCard } from '@/components/webinar/WebinarCard';
 import { TagFilter } from '@/components/blog/TagFilter';
 
 export default function WebinarListPage() {
-  const [webinars, setWebinars] = useState<WebinarMetadata[]>([]);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [allTags, setAllTags] = useState<string[]>([]);
+  const [webinars, setWebinars] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [allTags, setAllTags] = useState([]);
 
   useEffect(() => {
     const loadWebinars = async () => {
@@ -22,7 +21,7 @@ export default function WebinarListPage() {
     loadWebinars();
   }, []);
 
-  const handleTagSelect = (tag: string) => {
+  const handleTagSelect = (tag) => {
     setSelectedTags(prev => 
       prev.includes(tag)
         ? prev.filter(t => t !== tag)

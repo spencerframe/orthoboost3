@@ -1,24 +1,25 @@
-export interface Host {
-  name: string;
-  title: string;
-  image: string;
-  bio?: string;
-}
+export const Host = {
+  name: '',
+  title: '',
+  image: '',
+  bio: ''
+};
 
-export interface WebinarPost {
-  title: string;
-  date: string;
-  time: string;
-  description: string;
-  featuredImage: string;
-  published: boolean;
-  tags: string[];
-  hosts: Host[];
-  benefits: string[];
-  registrationUrl: string;
-}
+export const WebinarPost = {
+  title: '',
+  date: '',
+  time: '',
+  description: '',
+  featuredImage: '',
+  published: false,
+  tags: [],
+  hosts: [],
+  benefits: [],
+  registrationUrl: ''
+};
 
-export interface WebinarMetadata extends Omit<WebinarPost, 'description'> {
-  snippet: string;
-  slug: string;
-}
+export const WebinarMetadata = {
+  ...WebinarPost,
+  snippet: '',
+  slug: ''
+};

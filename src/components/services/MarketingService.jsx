@@ -1,15 +1,7 @@
-import { LucideIcon, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface MarketingServiceProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  features: string[];
-  initialX?: number;
-}
-
-export function MarketingService({ icon: Icon, title, description, features, initialX = 0 }: MarketingServiceProps) {
+export function MarketingService({ icon: Icon, title, description, features, initialX = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: initialX }}

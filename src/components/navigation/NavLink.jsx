@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-interface NavLinkProps {
-  to: string;
-  isActive: boolean;
-  children: React.ReactNode;
-}
-
-export function NavLink({ to, isActive, children }: NavLinkProps) {
+export function NavLink({ to, isActive, children }) {
   return (
     <Link
       to={to}

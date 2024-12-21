@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BlogMetadata } from '@/types/blog';
 import { getAllBlogs } from '@/utils/blog-utils';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { TagFilter } from '@/components/blog/TagFilter';
 
 export default function BlogListPage() {
-  const [blogs, setBlogs] = useState<BlogMetadata[]>([]);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [allTags, setAllTags] = useState<string[]>([]);
+  const [blogs, setBlogs] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [allTags, setAllTags] = useState([]);
 
   useEffect(() => {
     const loadBlogs = async () => {
@@ -23,7 +22,7 @@ export default function BlogListPage() {
     loadBlogs();
   }, []);
 
-  const handleTagSelect = (tag: string) => {
+  const handleTagSelect = (tag) => {
     setSelectedTags(prev => 
       prev.includes(tag)
         ? prev.filter(t => t !== tag)

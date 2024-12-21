@@ -2,11 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface BookCallButtonProps {
-  isActive: boolean;
-}
-
-export function BookCallButton({ isActive }: BookCallButtonProps) {
+export function BookCallButton({ isActive }) {
   return (
     <Link
       to="/schedule"

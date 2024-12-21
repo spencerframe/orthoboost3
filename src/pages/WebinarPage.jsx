@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Calendar, CheckCircle, Gift } from 'lucide-react';
+import { formatDateTime } from '@/utils/webinar-utils';
+import IframeResizer from 'iframe-resizer-react';
 
 export default function WebinarPage() {
   const { slug } = useParams();
-  const [webinar, setBlog] = useState(null);
+  const [webinar, setWebinar] = useState(null);
 
   useEffect(() => {
     const loadWebinar = async () => {
       try {
         const module = await import(`../webinars/${slug}.jsx`);
-        setBlog(module);
+        setWebinar(module);
       } catch (error) {
         console.error('Failed to load webinar:', error);
       }

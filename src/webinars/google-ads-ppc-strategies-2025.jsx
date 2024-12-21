@@ -1,10 +1,9 @@
-import { WebinarPost } from "@/types/webinar";
 import { motion } from "framer-motion";
 import { Calendar, CheckCircle, Gift } from "lucide-react";
 import { formatDateTime } from "@/utils/webinar-utils";
 import IframeResizer from "iframe-resizer-react";
 
-export const metadata: WebinarPost = {
+export const metadata = {
   title: "Mastering Google Ads PPC for Orthodontists in 2025",
   date: "2025-01-06",
   time: "19:30",
@@ -160,11 +159,11 @@ export default function Webinar() {
             <h2 className='text-3xl font-bold mb-6'>Reserve Your Spot Now</h2>
             <p className='text-xl text-gray-600'>Limited spots available—secure yours today!</p>
           </motion.div>
-          <div className='relative max-w-2xl mx-auto'>
+          <div className="max-w-2xl mx-auto">
             <IframeResizer
-              src='https://api.leadconnectorhq.com/widget/booking/bPDlxff02GMUs51bdeL0'
-              className='w-full -mb-48'
-              id='msgsndr-calendar'
+              src={registrationUrl}
+              className="w-full"
+              id="msgsndr-webinar-registration"
             />
           </div>
         </div>

@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
-import { WebinarMetadata } from "../../types/webinar";
 import { formatDateTime } from "../../utils/webinar-utils";
 
-interface WebinarCardProps {
-  webinar: WebinarMetadata;
-}
-
-export function WebinarCard({ webinar }: WebinarCardProps) {
-  // console.log("webinar:", webinar);
+export function WebinarCard({ webinar }) {
   return (
     <Link
       to={`/webinars/${webinar.slug}`}

@@ -1,8 +1,6 @@
-import { WebinarMetadata, WebinarPost } from '@/types/webinar';
-
-export async function getAllWebinars(): Promise<WebinarMetadata[]> {
+export async function getAllWebinars() {
   const webinarModules = import.meta.glob('/src/webinars/*.jsx');
-  const webinars: WebinarMetadata[] = [];
+  const webinars = [];
 
   for (const path in webinarModules) {
     const module = await webinarModules[path]();
@@ -21,7 +19,7 @@ export async function getAllWebinars(): Promise<WebinarMetadata[]> {
   return webinars.sort((a, b) => new Date(a.date + ' ' + a.time).getTime() - new Date(b.date + ' ' + b.time).getTime());
 }
 
-export async function getNextWebinar(): Promise<WebinarMetadata | null> {
+export async function getNextWebinar() {
   const webinars = await getAllWebinars();
   const now = new Date();
   
@@ -31,7 +29,7 @@ export async function getNextWebinar(): Promise<WebinarMetadata | null> {
   }) || null;
 }
 
-export function formatDateTime(date: string, time: string): string {
+export function formatDateTime(date, time) {
   return new Date(`${date} ${time}`).toLocaleString('en-US', {
     weekday: 'long',
     year: 'numeric',

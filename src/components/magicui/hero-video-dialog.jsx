@@ -6,24 +6,6 @@ import { Play, XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-type AnimationStyle =
-  | "from-bottom"
-  | "from-center"
-  | "from-top"
-  | "from-left"
-  | "from-right"
-  | "fade"
-  | "top-in-bottom-out"
-  | "left-in-right-out";
-
-interface HeroVideoProps {
-  animationStyle?: AnimationStyle;
-  videoSrc: string;
-  thumbnailSrc: string;
-  thumbnailAlt?: string;
-  className?: string;
-}
-
 const animationVariants = {
   "from-bottom": {
     initial: { y: "100%", opacity: 0 },
@@ -73,7 +55,7 @@ export default function HeroVideoDialog({
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
   className,
-}: HeroVideoProps) {
+}) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const selectedAnimation = animationVariants[animationStyle];
 

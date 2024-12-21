@@ -7,7 +7,7 @@ import { getNextWebinar } from "@/utils/webinar-utils";
 
 export function FreeStuffDropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const [nextWebinar, setNextWebinar] = useState<WebinarMetadata | null>(null);
+  const [nextWebinar, setNextWebinar] = useState(null);
 
   useEffect(() => {
     const loadNextWebinar = async () => {
@@ -70,7 +70,7 @@ export function FreeStuffDropdown() {
               onMouseLeave={() => setIsOpen(false)}
             >
               <div className='p-2'>
-                {menuItems.map((item, index) => (
+                {menuItems.map((item) => (
                   <Link
                     key={item.to}
                     to={item.to}

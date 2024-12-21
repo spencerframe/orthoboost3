@@ -104,7 +104,7 @@ export function LeadSources() {
       </div>
 
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={0}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}
@@ -116,7 +116,7 @@ export function LeadSources() {
         endYOffset={-30}
       />
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={.4}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}
@@ -126,7 +126,7 @@ export function LeadSources() {
         toRef={div4Ref}
       />
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={.8}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}
@@ -138,7 +138,7 @@ export function LeadSources() {
         endYOffset={30}
       />
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={.2}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}
@@ -151,7 +151,7 @@ export function LeadSources() {
         reverse
       />
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={.6}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}
@@ -162,7 +162,7 @@ export function LeadSources() {
         reverse
       />
       <AnimatedBeam
-        delay={Math.random() * 1.5}
+        delay={1}
         duration={18}
         gradientStartColor={"#2563eb"}
         gradientStopColor={"#06b6d4"}

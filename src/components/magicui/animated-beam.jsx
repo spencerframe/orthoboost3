@@ -1,32 +1,11 @@
 "use client";
 
-import { RefObject, useEffect, useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
-export interface AnimatedBeamProps {
-  className?: string;
-  containerRef: RefObject<HTMLElement>; // Container ref
-  fromRef: RefObject<HTMLElement>;
-  toRef: RefObject<HTMLElement>;
-  curvature?: number;
-  reverse?: boolean;
-  pathColor?: string;
-  pathWidth?: number;
-  pathOpacity?: number;
-  gradientStartColor?: string;
-  gradientStopColor?: string;
-  delay?: number;
-  duration?: number;
-  repeatDelay?: number;
-  startXOffset?: number;
-  startYOffset?: number;
-  endXOffset?: number;
-  endYOffset?: number;
-}
-
-export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
+export const AnimatedBeam = ({
   className,
   containerRef,
   fromRef,
