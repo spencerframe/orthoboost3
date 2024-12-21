@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { WebinarPost } from '@/types/webinar';
 
 export default function WebinarPage() {
   const { slug } = useParams();
-  const [webinar, setBlog] = useState<{ 
-    default: React.ComponentType;
-    metadata: WebinarPost;
-  } | null>(null);
+  const [webinar, setBlog] = useState(null);
 
   useEffect(() => {
     const loadWebinar = async () => {
       try {
-        const module = await import(`../webinars/${slug}.tsx`);
+        const module = await import(`../webinars/${slug}.jsx`);
         setBlog(module);
       } catch (error) {
         console.error('Failed to load webinar:', error);

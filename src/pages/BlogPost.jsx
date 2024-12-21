@@ -14,7 +14,7 @@ export default function BlogPostPage() {
   useEffect(() => {
     const loadBlog = async () => {
       try {
-        const module = await import(`../blogs/${slug}.tsx`);
+        const module = await import(`../blogs/${slug}.jsx`);
         setBlog(module);
       } catch (error) {
         console.error('Failed to load blog post:', error);
@@ -42,7 +42,7 @@ export default function BlogPostPage() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[2/1] w-full overflow-hidden">
+          <div className="h-[40vw] sm:h-[30vw] max-h-[400px] w-full overflow-hidden">
             <img
               src={metadata.featuredImage}
               alt={metadata.title}
@@ -50,7 +50,7 @@ export default function BlogPostPage() {
             />
           </div>
           
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative">
             <div className="bg-white rounded-xl shadow-xl p-8 md:p-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {metadata.tags.map((tag) => (

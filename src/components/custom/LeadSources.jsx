@@ -3,7 +3,7 @@ import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
-const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode }>(({ className, children }, ref) => {
+const Circle = forwardRef(({ className, children }, ref) => {
   return (
     <div
       ref={ref}
@@ -17,14 +17,14 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 Circle.displayName = "Circle";
 
 export function LeadSources() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const div3Ref = useRef<HTMLDivElement>(null);
-  const div4Ref = useRef<HTMLDivElement>(null);
-  const div5Ref = useRef<HTMLDivElement>(null);
-  const div6Ref = useRef<HTMLDivElement>(null);
-  const div7Ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
+  const div1Ref = useRef(null);
+  const div2Ref = useRef(null);
+  const div3Ref = useRef(null);
+  const div4Ref = useRef(null);
+  const div5Ref = useRef(null);
+  const div6Ref = useRef(null);
+  const div7Ref = useRef(null);
 
   return (
     <div

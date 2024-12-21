@@ -1,12 +1,12 @@
 import { WebinarMetadata, WebinarPost } from '@/types/webinar';
 
 export async function getAllWebinars(): Promise<WebinarMetadata[]> {
-  const webinarModules = import.meta.glob('/src/webinars/*.tsx');
+  const webinarModules = import.meta.glob('/src/webinars/*.jsx');
   const webinars: WebinarMetadata[] = [];
 
   for (const path in webinarModules) {
     const module = await webinarModules[path]();
-    const slug = path.replace('/src/webinars/', '').replace('.tsx', '');
+    const slug = path.replace('/src/webinars/', '').replace('.jsx', '');
     
     if (module.metadata && module.metadata.published) {
       const { description, ...metadata } = module.metadata;

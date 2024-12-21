@@ -1,12 +1,12 @@
 import { BlogMetadata, BlogPost } from '@/types/blog';
 
 export async function getAllBlogs(): Promise<BlogMetadata[]> {
-  const blogModules = import.meta.glob('/src/blogs/*.tsx');
+  const blogModules = import.meta.glob('/src/blogs/*.jsx');
   const blogs: BlogMetadata[] = [];
 
   for (const path in blogModules) {
     const module = await blogModules[path]();
-    const slug = path.replace('/src/blogs/', '').replace('.tsx', '');
+    const slug = path.replace('/src/blogs/', '').replace('.jsx', '');
     
     if (module.metadata && module.metadata.published) {
       blogs.push({
