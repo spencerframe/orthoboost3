@@ -16,6 +16,7 @@ import WebinarPage from "./pages/WebinarPage";
 import BlogListPage from "./pages/BlogListPage";
 import BlogPost from "./pages/BlogPost";
 import WebinarListPage from "./pages/WebinarListPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/webinars" element={<WebinarListPage />} />
           <Route path="/webinars/:slug" element={<WebinarPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
     </BrowserRouter>

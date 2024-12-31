@@ -3,11 +3,15 @@ import { motion } from 'framer-motion';
 import { getAllBlogs } from '@/utils/blog-utils';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { TagFilter } from '@/components/blog/TagFilter';
+import { Pagination } from '@/components/blog/Pagination';
+
+const BLOGS_PER_PAGE = 6;
 
 export default function BlogListPage() {
   const [blogs, setBlogs] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [allTags, setAllTags] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const loadBlogs = async () => {
@@ -22,6 +26,11 @@ export default function BlogListPage() {
     loadBlogs();
   }, []);
 
+  useEffect(() => {
+    // Reset to first page when tags change
+    setCurrentPage(1);
+  }, [selectedTags]);
+
   const handleTagSelect = (tag) => {
     setSelectedTags(prev => 
       prev.includes(tag)
@@ -35,6 +44,16 @@ export default function BlogListPage() {
         selectedTags.some(tag => blog.tags.includes(tag))
       )
     : blogs;
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredBlogs.length / BLOGS_PER_PAGE);
+  const startIndex = (currentPage - 1) * BLOGS_PER_PAGE;
+  const paginatedBlogs = filteredBlogs.slice(startIndex, startIndex + BLOGS_PER_PAGE);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="pt-20">
@@ -61,7 +80,7 @@ export default function BlogListPage() {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredBlogs.map((blog) => (
+            {paginatedBlogs.map((blog) => (
               <motion.div
                 key={blog.slug}
                 initial={{ opacity: 0, y: 20 }}
@@ -72,6 +91,14 @@ export default function BlogListPage() {
               </motion.div>
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          )}
         </div>
       </section>
     </div>

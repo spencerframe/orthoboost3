@@ -3,11 +3,15 @@ import { motion } from 'framer-motion';
 import { getAllWebinars } from '@/utils/webinar-utils';
 import { WebinarCard } from '@/components/webinar/WebinarCard';
 import { TagFilter } from '@/components/blog/TagFilter';
+import { Pagination } from '@/components/blog/Pagination';
+
+const WEBINARS_PER_PAGE = 6;
 
 export default function WebinarListPage() {
   const [webinars, setWebinars] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [allTags, setAllTags] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const loadWebinars = async () => {
@@ -20,6 +24,11 @@ export default function WebinarListPage() {
     
     loadWebinars();
   }, []);
+
+  useEffect(() => {
+    // Reset to first page when tags change
+    setCurrentPage(1);
+  }, [selectedTags]);
 
   const handleTagSelect = (tag) => {
     setSelectedTags(prev => 
@@ -34,6 +43,16 @@ export default function WebinarListPage() {
         selectedTags.some(tag => webinar.tags.includes(tag))
       )
     : webinars;
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredWebinars.length / WEBINARS_PER_PAGE);
+  const startIndex = (currentPage - 1) * WEBINARS_PER_PAGE;
+  const paginatedWebinars = filteredWebinars.slice(startIndex, startIndex + WEBINARS_PER_PAGE);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="pt-20">
@@ -60,7 +79,7 @@ export default function WebinarListPage() {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredWebinars.map((webinar) => (
+            {paginatedWebinars.map((webinar) => (
               <motion.div
                 key={webinar.slug}
                 initial={{ opacity: 0, y: 20 }}
@@ -71,6 +90,14 @@ export default function WebinarListPage() {
               </motion.div>
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          )}
         </div>
       </section>
     </div>
