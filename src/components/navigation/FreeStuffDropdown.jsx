@@ -46,7 +46,7 @@ export function FreeStuffDropdown() {
   return (
     <div className='relative'>
       <button
-        className='flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors py-2'
+        className='flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors py-0 md:py-4'
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
@@ -65,7 +65,7 @@ export function FreeStuffDropdown() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
-              className='absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'
+              className='absolute top-full left-0 w-64 bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
