@@ -27,7 +27,7 @@ export function FreeStuffDropdown() {
     {
       icon: Video,
       to: "/webinars",
-      label: "Free Webinars",
+      label: "Webinar Replays",
       description: "Live training sessions",
     },
     ...(nextWebinar

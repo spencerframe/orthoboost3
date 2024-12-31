@@ -9,7 +9,7 @@ export const metadata = {
   time: "19:30",
   description: "Join Dr. Tyler Coles and Tyler Loveall for an in-depth training on proven Google Ads strategies that consistently deliver high-quality orthodontic leads. Learn how to optimize your campaigns for maximum ROI and dominate your local market.",
   featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-  published: true,
+  published: false,
   tags: ["google ads", "ppc", "lead generation"],
   hosts: [
     {

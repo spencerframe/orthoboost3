@@ -16,14 +16,20 @@ export async function getAllWebinars() {
     }
   }
 
-  return webinars.sort((a, b) => new Date(a.date + ' ' + a.time).getTime() - new Date(b.date + ' ' + b.time).getTime());
+  // Sort webinars by date and time descending (most recent first)
+  return webinars.sort((a, b) => {
+    const dateTimeA = new Date(a.date + ' ' + a.time);
+    const dateTimeB = new Date(b.date + ' ' + b.time);
+    return dateTimeB.getTime() - dateTimeA.getTime();
+  });
 }
 
 export async function getNextWebinar() {
   const webinars = await getAllWebinars();
   const now = new Date();
   
-  return webinars.find(webinar => {
+  // Find the next upcoming webinar (first future webinar in the sorted list)
+  return webinars.reverse().find(webinar => {
     const webinarDate = new Date(webinar.date + ' ' + webinar.time);
     return webinarDate > now;
   }) || null;

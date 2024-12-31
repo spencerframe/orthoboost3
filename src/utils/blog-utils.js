@@ -21,7 +21,12 @@ export async function getAllBlogs() {
     }
   }
 
-  return blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // Sort blogs by date descending (most recent first)
+  return blogs.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
 }
 
 export function formatDate(date) {
