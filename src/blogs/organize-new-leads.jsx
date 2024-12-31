@@ -4,7 +4,7 @@ export const metadata = {
   snippet: "Learn effective strategies for managing and organizing your practice's leads, and discover why traditional methods may be holding you back from optimal conversion rates.",
   featuredImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80",
   published: true,
-  tags: ["lead management", "practice efficiency", "automation"]
+  tags: ["lead generation", "marketing tips", "performance tracking"]
 };
 
 export default function Blog() {

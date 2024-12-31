@@ -4,7 +4,7 @@ export const metadata = {
   snippet: "Discover three powerful strategies that can help your orthodontic practice flourish without increasing your ad spend. Learn how to optimize patient communication and engagement.",
   featuredImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80",
   published: true,
-  tags: ["practice growth", "lead conversion", "patient communication"]
+  tags: ["marketing tips", "patient conversion", "lead generation"]
 };
 
 export default function Blog() {

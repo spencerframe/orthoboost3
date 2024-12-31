@@ -4,7 +4,7 @@ export const metadata = {
   snippet: "Learn proven strategies to boost your consultation conversion rates by addressing common misconceptions, simplifying choices, and optimizing the consultation process.",
   featuredImage: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&q=80",
   published: true,
-  tags: ["conversion optimization", "consultations", "patient experience"]
+  tags: ["patient conversion", "marketing tips"]
 };
 
 export default function Blog() {

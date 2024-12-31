@@ -4,7 +4,7 @@ export const metadata = {
   snippet: "Discover the critical error that could be costing your orthodontic practice $3.7 million in annual revenue and learn how to prevent it through effective lead management.",
   featuredImage: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80",
   published: true,
-  tags: ["practice growth", "lead management", "revenue optimization"]
+  tags: ["lead generation", "patient conversion", "performance tracking"]
 };
 
 export default function Blog() {

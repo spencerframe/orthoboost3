@@ -4,7 +4,7 @@ export const metadata = {
   snippet: "Learn how to organize successful patient events that build community, increase visibility, and drive practice growth through strategic planning and execution.",
   featuredImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80",
   published: true,
-  tags: ["patient events", "practice growth", "community engagement"]
+  tags: ["local marketing", "marketing tips", "lead generation"]
 };
 
 export default function Blog() {

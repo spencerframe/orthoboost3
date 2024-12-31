@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { NavLink } from "@/components/navigation/NavLink";
 import { BookCallButton } from "@/components/navigation/BookCallButton";
 import { Logo } from "@/components/navigation/Logo";
+import { MobileMenu } from "@/components/navigation/MobileMenu";
 import { FreeStuffDropdown } from "@/components/navigation/FreeStuffDropdown";
 
 const navLinks = [
@@ -31,6 +32,7 @@ export default function Navbar() {
             <FreeStuffDropdown />
             <BookCallButton isActive={isActive("/schedule")} />
           </div>
+          <MobileMenu isActive={isActive} />
         </div>
       </div>
     </nav>
