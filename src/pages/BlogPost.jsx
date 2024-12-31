@@ -47,7 +47,7 @@ export default function BlogPostPage() {
           </div>
           
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative">
-            <div className="bg-white rounded-xl shadow-xl p-8 md:p-12">
+            <div className="blog-post bg-white rounded-xl shadow-xl p-8 md:p-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {metadata.tags.map((tag) => (
                   <span
@@ -67,7 +67,7 @@ export default function BlogPostPage() {
                 {formatDate(metadata.date)}
               </time>
 
-              <div className="mt-8">
+              <div className="mt-6">
                 <BlogContent />
               </div>
             </div>
