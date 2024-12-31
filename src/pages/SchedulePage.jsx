@@ -26,16 +26,16 @@ export default function SchedulePage() {
           <div className='bg-white rounded-xl shadow-lg p-10'>
             <div className='flex flex-col-reverse sm:flex-row gap-10'>
               <div className='sm:w-1/2'>
+                <div className="mb-8">
+                  <img
+                    src='/images/tyler-loveall-headshot.png'
+                    alt='Tyler Loveall'
+                    className='rounded-xl w-32 mx-auto sm:mx-0'
+                  />
+                </div>
                 <WhySchedudule />
               </div>
               <div className='sm:w-1/2'>
-                <div>
-                  <img
-                    src='/images/tyler-loveall-headshot.png'
-                    alt='Dr. Tyler'
-                    className='rounded-full mx-auto w-20'
-                  />
-                </div>
                 <IframeResizer
                   src='https://api.leadconnectorhq.com/widget/booking/bPDlxff02GMUs51bdeL0'
                   className='w-full -mb-48'

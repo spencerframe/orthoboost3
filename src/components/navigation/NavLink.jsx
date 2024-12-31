@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-export function NavLink({ to, isActive, children }) {
+export function NavLink({ to, isActive, children, onClick }) {
   return (
     <Link
       to={to}
+      onClick={onClick}
       className={cn(
         "transition duration-200 py-0 md:py-2",
         isActive

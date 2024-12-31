@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function CTASection() {
@@ -20,9 +21,10 @@ export function CTASection() {
           </p>
           <Link
             to="/schedule"
-            className="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white px-8 py-4 rounded-full text-lg font-semibold transition-opacity duration-200"
+            className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center space-x-2 hover:bg-opacity-90 transition"
           >
-            Schedule a Free Discovery Call
+            <span>Schedule Your Call Now</span>
+            <ArrowRight />
           </Link>
         </motion.div>
       </div>

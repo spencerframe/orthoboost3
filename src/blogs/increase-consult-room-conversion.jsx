@@ -10,12 +10,9 @@ export const metadata = {
 export default function Blog() {
   return (
     <article className='prose prose-lg max-w-none'>
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">
-        3 Ways to Increase Conversion Rates in the Consult Room
-      </h1>
-
-      <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-8">Overcoming Misconceptions: "They Need a Dental Cleaning First"</h2>
-      <p className="text-gray-600 mb-8">
+      
+      <h2>Overcoming Misconceptions: "They Need a Dental Cleaning First"</h2>
+      <p >
         The misconception that a patient needs a dental cleaning before considering orthodontic treatment can hinder conversion rates. Don't fall into the trap of assuming they'll take the initiative to schedule a cleaning. Instead, take proactive steps to address this issue:
       </p>
 
@@ -40,8 +37,8 @@ export default function Blog() {
         </li>
       </ul>
 
-      <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-8">The Power of Simplicity: Fewer Options, Higher Conversions</h2>
-      <p className="text-gray-600 mb-8">
+      <h2>The Power of Simplicity: Fewer Options, Higher Conversions</h2>
+      <p >
         In today's fast-paced world, simplicity is king. Take a cue from the success of fast-food giant In-N-Out: limited options and straightforward choices drive growth. Apply this principle to your practice's pricing structure:
       </p>
 
@@ -60,8 +57,8 @@ export default function Blog() {
         </li>
       </ul>
 
-      <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-8">Respect Time: Shorter Consults, Higher Satisfaction</h2>
-      <p className="text-gray-600 mb-8">
+      <h2>Respect Time: Shorter Consults, Higher Satisfaction</h2>
+      <p >
         Modern patients value their time more than ever. An extended consult time can inadvertently convey that you're wasting their precious minutes. Show that you respect their time while still showcasing your expertise:
       </p>
 
@@ -80,7 +77,7 @@ export default function Blog() {
         </li>
       </ul>
 
-      <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-8">Conclusion</h2>
+      <h2>Conclusion</h2>
       <p className="text-gray-600">
         Boosting conversion rates in the consult room is a multi-faceted endeavor. By dispelling misconceptions, simplifying choices, and respecting your patient's time, you'll create an environment that fosters trust and confidence. Remember, the consult room is where you make a lasting impression, and by implementing these strategies, you can significantly enhance your practice's success in converting potential patients into valued clients.
       </p>

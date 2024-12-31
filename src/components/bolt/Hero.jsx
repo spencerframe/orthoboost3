@@ -36,9 +36,9 @@ export default function Hero() {
                 >
                   Schedule a Strategy Call
                 </Link>
-                <button className='bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition'>
+                {/* <button className='bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition'>
                   View Success Stories
-                </button>
+                </button> */}
               </div>
             </motion.div>
           </div>

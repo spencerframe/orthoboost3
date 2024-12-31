@@ -9,6 +9,7 @@ export function MobileMenu({ isActive }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
     { path: "/how-it-works", label: "How It Works" },
   ];
@@ -50,15 +51,21 @@ export function MobileMenu({ isActive }) {
                       key={link.path}
                       to={link.path}
                       isActive={isActive(link.path)}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => {
+                        setIsOpen(false);
+                      }}
                     >
                       {link.label}
                     </NavLink>
                   ))}
-                  <FreeStuffDropdown />
+                  <div onClick={() => setIsOpen(false)}>
+                    <FreeStuffDropdown />
+                  </div>
                 </div>
                 <div className="pb-4 w-full">
-                  <BookCallButton isActive={isActive("/schedule")} fullWidth />
+                  <div onClick={() => setIsOpen(false)}>
+                    <BookCallButton isActive={isActive("/schedule")} fullWidth />
+                  </div>
                 </div>
               </nav>
             </div>

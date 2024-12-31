@@ -19,7 +19,7 @@ export function CTASection() {
           </p>
           <Link
             to="/schedule"
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center space-x-2 transition-colors duration-200"
+            className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center space-x-2 hover:bg-opacity-90 transition"
           >
             <span>Schedule Your Call Now</span>
             <ArrowRight />
