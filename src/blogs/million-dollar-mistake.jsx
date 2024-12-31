@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <article className='prose prose-lg max-w-none'>
+    <article>
       <p>
         In the world of orthodontics, a single mistake can have far-reaching consequences, especially when it comes to managing new leads and potential patients. Did you know that there's one critical error that could be costing your practice a staggering 3.7 million dollars a year in new revenue? In this blog post, we're shining a light on this costly blunder and providing you with a straightforward solution that can transform your practice's financial outlook.
       </p>

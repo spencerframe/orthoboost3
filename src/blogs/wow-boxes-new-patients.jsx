@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <article className='prose prose-lg max-w-none'>
+    <article>
       Coming soon...
     </article>
   );
