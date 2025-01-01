@@ -1,18 +1,17 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "./NavLink";
 import { BookCallButton } from "./BookCallButton";
-import { FreeStuffDropdown } from "./FreeStuffDropdown";
 
-export function MobileMenu({ isActive }) {
+export function MobileMenu({ isActive, navLinks }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState(null);
 
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/services", label: "Services" },
-    { path: "/how-it-works", label: "How It Works" },
-  ];
+  useEffect(() => {
+  console.log('navLinks:', navLinks);
+}, [ navLinks ])
 
   return (
     <div className='md:hidden'>
@@ -46,21 +45,60 @@ export function MobileMenu({ isActive }) {
 
               <nav className='flex flex-col justify-between h-full px-4'>
                 <div className='flex flex-col space-y-6'>
-                  {navLinks.map((link) => (
-                    <NavLink
-                      key={link.path}
-                      to={link.path}
-                      isActive={isActive(link.path)}
-                      onClick={(e) => {
-                        setIsOpen(false);
-                      }}
-                    >
-                      {link.label}
-                    </NavLink>
+                  {navLinks?.map((link) => (
+                    <div key={link.path}>
+                      {link.children ? (
+                        <div>
+                          <button
+                            onClick={() => setExpandedItem(expandedItem === link.path ? null : link.path)}
+                            className="flex items-center justify-between w-full text-left"
+                          >
+                            <span className="text-gray-700 hover:text-blue-600 transition-colors">
+                              {link.label}
+                            </span>
+                            <ChevronDown
+                              className={`w-4 h-4 transition-transform duration-200 ${
+                                expandedItem === link.path ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {expandedItem === link.path && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pl-4 mt-2 space-y-2">
+                                  {link.children.map((child) => (
+                                    <Link
+                                      key={child.to}
+                                      to={child.to}
+                                      className="flex items-center space-x-2 py-2"
+                                      onClick={() => setIsOpen(false)}
+                                    >
+                                      <child.icon className="w-5 h-5 text-gray-600" />
+                                      <span>{child.label}</span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <NavLink
+                          to={link.path}
+                          isActive={isActive(link.path)}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </NavLink>
+                      )}
+                    </div>
                   ))}
-                  <div onClick={() => setIsOpen(false)}>
-                    <FreeStuffDropdown />
-                  </div>
                 </div>
                 <div className="pb-4 w-full">
                   <div onClick={() => setIsOpen(false)}>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/navigation/ScrollToTop";
-import Navbar from "./components/bolt/Navbar";
+import Navbar from "./components/navigation/Navbar";
 import Hero from "./components/bolt/Hero";
 import Process from "./components/bolt/Process";
 import Results from "./components/bolt/Results";

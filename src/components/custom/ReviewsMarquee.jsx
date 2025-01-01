@@ -52,7 +52,7 @@ const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, location, body }) => {
   return (
-    <figure className='relative w-[350px] overflow-hidden rounded-xl bg-white p-6 shadow-[0px_20px_40px_0px_rgba(0,0,0,.1)] mx-4'>
+    <figure className='relative sm:w-[350px] overflow-hidden rounded-xl bg-white p-6 shadow-[0px_20px_40px_0px_rgba(0,0,0,.1)] mx-4'>
       <div className='flex flex-row items-center gap-4'>
         <img
           className='h-10 w-10'
@@ -111,7 +111,7 @@ export default function ReviewsMarquee() {
         <div className='hidden sm:block'>
           <MarqueeDemo />
         </div>
-        <div className='flex flex-col gap-8'>
+        <div className='flex flex-col sm:hidden gap-8'>
           {reviews.slice(0, 4).map((review, index) => (
             <motion.div
               key={review.id}
