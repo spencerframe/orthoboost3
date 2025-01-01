@@ -25,6 +25,7 @@ export function MarketingSolutionsVideo() {
         colorFrom='#2563eb'
         colorTo='#06b6d4'
         delay={10}
+        className={'hidden md:block'}
       />
     </div>
   );

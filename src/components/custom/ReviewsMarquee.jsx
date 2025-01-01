@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
+import { motion } from "framer-motion";
 
 const reviews = [
   {
@@ -107,7 +108,25 @@ export default function ReviewsMarquee() {
     <section className='  bg-gradient-to-r from-blue-600 to-cyan-500 py-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <h2 className='text-4xl font-bold text-center mb-12 text-white'>What Our Clients Say</h2>
-        <MarqueeDemo />
+        <div className='hidden sm:block'>
+          <MarqueeDemo />
+        </div>
+        <div className='flex flex-col gap-8'>
+          {reviews.slice(0, 4).map((review, index) => (
+            <motion.div
+              key={review.id}
+              initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <ReviewCard
+                key={review.id}
+                {...review}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

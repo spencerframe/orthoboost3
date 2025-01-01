@@ -61,6 +61,7 @@ export default function Hero() {
                   colorFrom='#2563eb'
                   colorTo='#06b6d4'
                   delay={20}
+                  className={'hidden md:block'}
                 />
                 <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                   <Award className='text-blue-600' />
@@ -75,6 +76,7 @@ export default function Hero() {
                   colorFrom='#2563eb'
                   colorTo='#06b6d4'
                   delay={10}
+                  className={'hidden md:block'}
                 />
                 <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                   <Clock className='text-blue-600' />
@@ -88,7 +90,8 @@ export default function Hero() {
                   duration={12}
                   colorFrom='#2563eb'
                   colorTo='#06b6d4'
-                />
+                  className={'hidden md:block'}
+                  />
                 <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto'>
                   <Bot className='text-blue-600' />
                 </div>
