@@ -33,7 +33,7 @@ export default function Webinar() {
   const { title, date, time, description, benefits, registrationUrl, hosts } = metadata;
 
   return (
-    <div className='pt-20'>
+    <div className='py-20'>
       {/* Hero Section */}
       <section className='bg-gradient-to-b from-blue-50 to-white py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
