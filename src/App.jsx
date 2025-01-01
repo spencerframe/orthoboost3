@@ -23,17 +23,17 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className='min-h-screen bg-white'>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={
             <>
               <Hero />
-              <Services />
-              <ReviewsMarquee />
-              <Results />
-              <Affordability />
-              <Process />
-              <PrimaryCTA />
+              {/* <Services /> */}
+              {/* <ReviewsMarquee /> */}
+              {/* <Results /> */}
+              {/* <Affordability /> */}
+              {/* <Process /> */}
+              {/* <PrimaryCTA /> */}
             </>
           } />
           <Route path="/services" element={<ServicePage />} />

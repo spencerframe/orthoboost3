@@ -104,7 +104,7 @@ const MarqueeDemo = () => {
 
 export default function ReviewsMarquee() {
   return (
-    <section className='bg-gradient-to-r from-blue-600 to-cyan-500 py-20'>
+    <section className='  bg-gradient-to-r from-blue-600 to-cyan-500 py-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <h2 className='text-4xl font-bold text-center mb-12 text-white'>What Our Clients Say</h2>
         <MarqueeDemo />
