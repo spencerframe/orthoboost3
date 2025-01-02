@@ -82,8 +82,8 @@ export default function BlogPostPage() {
             />
           </div>
           
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative">
-            <div className="blog-post bg-white rounded-xl shadow-xl p-8 md:p-12">
+          <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 -mt-32 relative">
+            <div className="blog-post bg-white rounded-xl shadow-xl px-4 py-6 sm:p-8 md:p-12">
               <div className="flex flex-wrap gap-2 mb-4">
                 {metadata.tags.map((tag) => (
                   <span
