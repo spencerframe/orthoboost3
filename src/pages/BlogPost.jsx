@@ -1,19 +1,27 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { formatDate } from '@/utils/blog-utils';
+import { doesBlogExist } from '@/utils/navigation-utils';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
+  const [exists, setExists] = useState(true);
 
   useEffect(() => {
     const loadBlog = async () => {
       try {
+        const blogExists = await doesBlogExist(slug);
+        if (!blogExists) {
+          setExists(false);
+          return;
+        }
         const module = await import(`../blogs/${slug}.jsx`);
         setBlog(module);
       } catch (error) {
         console.error('Failed to load blog post:', error);
+        setExists(false);
       }
     };
 
@@ -21,6 +29,10 @@ export default function BlogPostPage() {
       loadBlog();
     }
   }, [slug]);
+
+  if (!exists) {
+    return <Navigate to="/blog" replace />;
+  }
 
   if (!blog) {
     return <div>Loading...</div>;

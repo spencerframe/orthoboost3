@@ -1,21 +1,29 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, CheckCircle, Gift } from 'lucide-react';
 import { formatDateTime } from '@/utils/webinar-utils';
+import { doesWebinarExist } from '@/utils/navigation-utils';
 import IframeResizer from 'iframe-resizer-react';
 
 export default function WebinarPage() {
   const { slug } = useParams();
   const [webinar, setWebinar] = useState(null);
+  const [exists, setExists] = useState(true);
 
   useEffect(() => {
     const loadWebinar = async () => {
       try {
+        const webinarExists = await doesWebinarExist(slug);
+        if (!webinarExists) {
+          setExists(false);
+          return;
+        }
         const module = await import(`../webinars/${slug}.jsx`);
         setWebinar(module);
       } catch (error) {
         console.error('Failed to load webinar:', error);
+        setExists(false);
       }
     };
 
@@ -23,6 +31,10 @@ export default function WebinarPage() {
       loadWebinar();
     }
   }, [slug]);
+
+  if (!exists) {
+    return <Navigate to="/webinars" replace />;
+  }
 
   if (!webinar) {
     return (
