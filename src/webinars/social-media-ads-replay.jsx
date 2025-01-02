@@ -52,7 +52,7 @@ export default function Webinar() {
           <div className="relative rounded-xl max-w-4xl mx-auto">
             <HeroVideoDialog
               videoSrc={replayUrl}
-              thumbnailSrc="/images/facebook-ads-vs-google-ads.png"
+              thumbnailSrc="/images/facebook-ads-vs-google-ads.webp"
               thumbnailAlt="Webinar Replay"
             />
             <BorderBeam

@@ -8,14 +8,14 @@ export function MarketingSolutionsVideo() {
         className='dark:hidden block'
         animationStyle='from-center'
         videoSrc='https://www.youtube.com/embed/pa_uil3pe6g'
-        thumbnailSrc='/images/facebook-ads-vs-google-ads.png'
+        thumbnailSrc='/images/facebook-ads-vs-google-ads.webp'
         thumbnailAlt='Hero Video'
       />
       <HeroVideoDialog
         className='hidden dark:block'
         animationStyle='from-center'
         videoSrc='https://www.youtube.com/embed/pa_uil3pe6g'
-        thumbnailSrc='/images/facebook-ads-vs-google-ads.png'
+        thumbnailSrc='/images/facebook-ads-vs-google-ads.webp'
         thumbnailAlt='Hero Video'
       />
       <BorderBeam

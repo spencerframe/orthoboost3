@@ -11,7 +11,7 @@ export default function Hero() {
       <div
         className='relative bg-cover bg-center bg-no-repeat md:h-[600px] lg:h-[700px] xl:h-[800px] 2xl:h-[800px]'
         style={{
-          backgroundImage: "url(/images/digital-marketing-for-orthodontists-hero.png)",
+          backgroundImage: "url(/images/digital-marketing-for-orthodontists-hero-optimized.png)",
           backgroundPositionX: "60%",
         }}
       >
