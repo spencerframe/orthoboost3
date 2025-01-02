@@ -5,6 +5,8 @@ import { Calendar, CheckCircle, Gift } from 'lucide-react';
 import { formatDateTime } from '@/utils/webinar-utils';
 import { doesWebinarExist } from '@/utils/navigation-utils';
 import IframeResizer from 'iframe-resizer-react';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { generateWebinarSchema } from '@/utils/seo-utils';
 
 export default function WebinarPage() {
   const { slug } = useParams();
@@ -52,5 +54,19 @@ export default function WebinarPage() {
   }
 
   const WebinarContent = webinar.default;
-  return <WebinarContent />;
+  const { metadata } = webinar;
+  
+  return (
+    <>
+      <SEOHead
+        title={metadata.title}
+        description={metadata.description}
+        image={metadata.featuredImage}
+        url={`https://www.startorthoboost.com/webinars/${slug}`}
+        type="event"
+        structuredData={generateWebinarSchema(metadata)}
+      />
+      <WebinarContent />
+    </>
+  );
 }

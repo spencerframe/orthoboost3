@@ -3,10 +3,16 @@ import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { formatDate } from '@/utils/blog-utils';
 import { doesBlogExist } from '@/utils/navigation-utils';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { RelatedContent } from '@/components/blog/RelatedContent';
+import { generateBlogSchema } from '@/utils/seo-utils';
+import { getRelatedContent } from '@/utils/internal-linking';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
+  const [relatedBlogs, setRelatedBlogs] = useState([]);
   const [exists, setExists] = useState(true);
 
   useEffect(() => {
@@ -19,6 +25,10 @@ export default function BlogPostPage() {
         }
         const module = await import(`../blogs/${slug}.jsx`);
         setBlog(module);
+        
+        // Load related content
+        const related = await getRelatedContent(slug, module.metadata.tags);
+        setRelatedBlogs(related);
       } catch (error) {
         console.error('Failed to load blog post:', error);
         setExists(false);
@@ -43,7 +53,21 @@ export default function BlogPostPage() {
 
   return (
     <div className="pt-20">
-      <article>
+      <SEOHead
+        title={metadata.title}
+        description={metadata.snippet}
+        image={metadata.featuredImage}
+        url={`https://www.startorthoboost.com/blog/${slug}`}
+        type="article"
+        structuredData={generateBlogSchema({
+          ...metadata,
+          slug
+        })}
+      />
+      <article className='mb-20'>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs path={`/blog/${slug}`} />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,6 +110,7 @@ export default function BlogPostPage() {
           </div>
         </motion.div>
       </article>
+      <RelatedContent items={relatedBlogs} type="blog" />
     </div>
   );
 }

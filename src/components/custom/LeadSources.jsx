@@ -35,7 +35,7 @@ export function LeadSources() {
         <div className='flex flex-row items-center justify-between'>
           <Circle
             ref={div1Ref}
-            className='size-16 p-3 -mb-12'
+            className='size-16 p-3 -mb-6 sm:-mb-12'
           >
             <img
               src='/images/facebook.png'
@@ -44,7 +44,7 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div5Ref}
-            className='size-16 p-3 -mb-12'
+            className='size-16 p-3 -mb-6 sm:-mb-12'
           >
             <img
               src='/images/instagram.png'
@@ -64,7 +64,7 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div4Ref}
-            className='size-48 p-0 rounded-full overflow-hidden'
+            className='size-40 sm:size-48 p-0 rounded-full overflow-hidden'
           >
             <img
               src='/images/laptop-on-desk.png'
@@ -84,7 +84,7 @@ export function LeadSources() {
         <div className='flex flex-row items-center justify-between'>
           <Circle
             ref={div3Ref}
-            className='size-16 p-3 -mt-12'
+            className='size-16 p-3 -mt-6 sm:-mt-12'
           >
             <img
               src='/images/calls.png'
@@ -93,7 +93,7 @@ export function LeadSources() {
           </Circle>
           <Circle
             ref={div7Ref}
-            className='size-16 p-3 -mt-12'
+            className='size-16 p-3 -mt-6 sm:-mt-12'
           >
             <img
               src='/images/messenger.png'
