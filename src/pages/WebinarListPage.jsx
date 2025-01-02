@@ -4,6 +4,9 @@ import { getAllWebinars } from '@/utils/webinar-utils';
 import { WebinarCard } from '@/components/webinar/WebinarCard';
 import { TagFilter } from '@/components/blog/TagFilter';
 import { Pagination } from '@/components/blog/Pagination';
+import { Spinner } from '@/components/magicui/spinner';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { PAGE_METADATA } from '@/utils/page-metadata';
 
 const WEBINARS_PER_PAGE = 6;
 
@@ -12,14 +15,19 @@ export default function WebinarListPage() {
   const [selectedTags, setSelectedTags] = useState([]);
   const [allTags, setAllTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadWebinars = async () => {
-      const allWebinars = await getAllWebinars();
-      setWebinars(allWebinars);
+      try {
+        const allWebinars = await getAllWebinars();
+        setWebinars(allWebinars);
       
-      const tags = Array.from(new Set(allWebinars.flatMap(webinar => webinar.tags)));
-      setAllTags(tags);
+        const tags = Array.from(new Set(allWebinars.flatMap(webinar => webinar.tags)));
+        setAllTags(tags);
+      } finally {
+        setIsLoading(false);
+      }
     };
     
     loadWebinars();
@@ -56,6 +64,7 @@ export default function WebinarListPage() {
 
   return (
     <div className="pt-20">
+      <SEOHead {...PAGE_METADATA.webinars} />
       <section className="bg-gradient-to-b from-blue-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -72,6 +81,12 @@ export default function WebinarListPage() {
             </p>
           </motion.div>
 
+          {isLoading ? (
+            <div className="min-h-[400px] flex items-center justify-center">
+              <Spinner />
+            </div>
+          ) : (
+            <>
           <TagFilter
             tags={allTags}
             selectedTags={selectedTags}
@@ -97,6 +112,8 @@ export default function WebinarListPage() {
               totalPages={totalPages}
               onPageChange={handlePageChange}
             />
+          )}
+          </>
           )}
         </div>
       </section>

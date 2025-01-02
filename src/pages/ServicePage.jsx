@@ -5,6 +5,8 @@ import { MarketingService } from '@/components/services/MarketingService';
 import { LeadManagement } from '@/components/services/LeadManagement';
 import { ServiceHero } from '@/components/services/ServiceHero';
 import { PrimaryCTA } from '@/components/bolt/CTA';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { PAGE_METADATA } from '@/utils/page-metadata';
 
 export default function ServicePage() {
   const marketingServices = [
@@ -34,6 +36,7 @@ export default function ServicePage() {
 
   return (
     <div className="pt-20">
+      <SEOHead {...PAGE_METADATA.services} />
       <ServiceHero />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

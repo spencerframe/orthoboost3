@@ -5,12 +5,15 @@ import ReviewsStatic from "@/components/custom/ReviewsStatic";
 import { useScript } from "@/hooks/useScript";
 import IframeResizer from "iframe-resizer-react";
 import WhySchedudule from "@/components/schedule/WhySchedudule";
+import { SEOHead } from '@/components/seo/SEOHead';
+import { PAGE_METADATA } from '@/utils/page-metadata';
 
 export default function SchedulePage() {
   useScript("https://link.msgsndr.com/js/embed.js");
 
   return (
     <div className='pt-20'>
+      <SEOHead {...PAGE_METADATA.schedule} />
       <section className='bg-gradient-to-b from-blue-50 to-white py-20'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div

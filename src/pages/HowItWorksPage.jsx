@@ -2,6 +2,8 @@ import { Search, Video, PhoneCall, Target } from 'lucide-react';
 import { HeroSection } from '@/components/how-it-works/HeroSection';
 import { ProcessStep } from '@/components/how-it-works/ProcessStep';
 import { CTASection } from '@/components/how-it-works/CTASection';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { PAGE_METADATA } from '@/utils/page-metadata';
 
 export default function HowItWorksPage() {
   const steps = [
@@ -53,6 +55,7 @@ export default function HowItWorksPage() {
 
   return (
     <div className="pt-20">
+      <SEOHead {...PAGE_METADATA.howItWorks} />
       <HeroSection />
       
       <section className="pb-16">

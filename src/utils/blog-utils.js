@@ -1,11 +1,11 @@
 import { ALL_BLOG_TAGS } from '@/constants/blog-tags';
 
 export async function getAllBlogs() {
-  const blogModules = import.meta.glob("/src/blogs/*.jsx");
+  const blogModules = import.meta.glob("/src/blogs/*.jsx", { eager: true });
   const blogs = [];
 
   for (const path in blogModules) {
-    const module = await blogModules[path]();
+    const module = blogModules[path];
     const slug = path.replace("/src/blogs/", "").replace(".jsx", "");
 
     // Validate that blog only uses allowed tags

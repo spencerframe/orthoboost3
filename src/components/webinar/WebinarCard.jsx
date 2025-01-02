@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { formatDateTime } from "../../utils/webinar-utils";
+import { getThumbnailUrl } from '@/utils/image-utils';
 
 export function WebinarCard({ webinar }) {
   return (
@@ -11,8 +12,9 @@ export function WebinarCard({ webinar }) {
       <article className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300'>
         <div className='aspect-video relative overflow-hidden'>
           <img
-            src={webinar.featuredImage}
+            src={getThumbnailUrl(webinar.featuredImage)}
             alt={webinar.title}
+            loading="lazy"
             className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-300'
           />
           <div className='absolute top-4 left-4'>

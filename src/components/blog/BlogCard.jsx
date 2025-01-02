@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { formatDate } from '@/utils/blog-utils';
+import { getThumbnailUrl } from '@/utils/image-utils';
 
 export function BlogCard({ blog }) {
   return (
@@ -7,8 +8,9 @@ export function BlogCard({ blog }) {
       <article className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
         <div className="aspect-video relative overflow-hidden">
           <img
-            src={blog.featuredImage}
+            src={getThumbnailUrl(blog.featuredImage)}
             alt={blog.title}
+            loading="lazy"
             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
           />
         </div>

@@ -1,9 +1,9 @@
 export async function getAllWebinars() {
-  const webinarModules = import.meta.glob('/src/webinars/*.jsx');
+  const webinarModules = import.meta.glob('/src/webinars/*.jsx', { eager: true });
   const webinars = [];
 
   for (const path in webinarModules) {
-    const module = await webinarModules[path]();
+    const module = webinarModules[path];
     const slug = path.replace('/src/webinars/', '').replace('.jsx', '');
     
     if (module.metadata && module.metadata.published) {

@@ -3,10 +3,13 @@ import { Hero } from '@/components/about/Hero';
 import { TeamMember } from '@/components/about/TeamMember';
 import { MarketingPrinciples } from '@/components/about/MarketingPrinciples';
 import { CTASection } from '@/components/about/CTASection';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { PAGE_METADATA } from '@/utils/page-metadata';
 
 export default function AboutPage() {
   return (
     <div className="pt-20">
+      <SEOHead {...PAGE_METADATA.about} />
       <Hero />
       
       {/* Team Section */}
