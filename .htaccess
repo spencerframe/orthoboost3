@@ -1,0 +1,67 @@
+RewriteEngine On
+
+# Redirect for Black Friday Campaign
+Redirect 301 /blog/black-friday-braces-campaign/ https://www.startorthoboost.com/blog/black-friday-success
+
+# Redirect for Marketing Math for Orthodontists
+Redirect 301 /blog/marketing-math-for-orthodontists/ https://www.startorthoboost.com/blog/marketing-math
+
+# Redirect for TikTok Ads Masterclass
+Redirect 301 /blog/tiktok-ads-masterclass-for-orthodontists-webinar-replay/ https://www.startorthoboost.com/blog/tiktok-ads-vs-posts
+
+# Redirect for 4 Ways to Grow Your Orthodontic Practice
+Redirect 301 /blog/4-ways-to-grow-your-orthodontic-practice-in-2024/ https://www.startorthoboost.com/blog/growth-strategies-2024
+
+# Redirect for Giving Back to the Community
+Redirect 301 /blog/3-ways-your-office-can-give-back-to-the-community/ https://www.startorthoboost.com/blog/community-giving
+
+# Redirect for Holiday Party Planning
+Redirect 301 /blog/how-to-planning-a-holiday-party-for-patients/ https://www.startorthoboost.com/blog/holiday-party-planning
+
+# Redirect for Patient Photos Guide
+Redirect 301 /blog/how-to-take-awesome-patient-photos/ https://www.startorthoboost.com/blog/patient-photos-guide
+
+# Redirect for Marketing ROI Tracking
+Redirect 301 /blog/how-to-track-your-marketing-roi/ https://www.startorthoboost.com/blog/track-marketing-roi
+
+# Redirect for Boost Posts vs Paid Ads on Facebook
+Redirect 301 /blog/boost-post-vs-paid-ads-on-facebook/ https://www.startorthoboost.com/blog/facebook-boost-vs-ads
+
+# Redirect for Raffles to Boost Patient Referrals
+Redirect 301 /blog/10-awesome-raffles-to-boost-patient-referrals/ https://www.startorthoboost.com/blog/patient-referral-raffles
+
+# Redirect for Text Marketing
+Redirect 301 /blog/grow-your-practice-with-text-marketing/ https://www.startorthoboost.com/blog/text-marketing-growth
+
+# Redirect for Email Marketing
+Redirect 301 /blog/how-to-use-email-marketing-to-grow-your-practice/ https://www.startorthoboost.com/blog/email-marketing-growth
+
+# Redirect for Creating Patient Loyalty
+Redirect 301 /blog/how-to-create-patient-loyalty/ https://www.startorthoboost.com/blog/create-patient-loyalty
+
+# Redirect for Scent Marketing 101
+Redirect 301 /blog/does-your-office-smell-scent-marketing-101/ https://www.startorthoboost.com/blog/scent-marketing-101
+
+# Redirect for Wow Boxes New Patients
+Redirect 301 /blog/get-more-new-patients-with-wow-boxes/ https://www.startorthoboost.com/blog/wow-boxes-new-patients
+
+# Redirect for Google Reviews Tip
+Redirect 301 /blog/simple-tip-to-get-more-google-reviews/ https://www.startorthoboost.com/blog/get-more-google-reviews
+
+# Redirect for Increasing New Starts
+Redirect 301 /blog/increase-new-starts-by-10-instantly/ https://www.startorthoboost.com/blog/increase-new-starts
+
+# Redirect for Consult Room Conversions
+Redirect 301 /blog/3-ways-to-increase-conversion-rates-in-the-consult-room/ https://www.startorthoboost.com/blog/increase-consult-room-conversion
+
+# Redirect for Organizing New Leads
+Redirect 301 /blog/practice-tip-how-to-organize-new-leads/ https://www.startorthoboost.com/blog/organize-new-leads
+
+# Redirect for Planning Profitable Patient Events
+Redirect 301 /blog/how-to-plan-a-profitable-patient-event/ https://www.startorthoboost.com/blog/profitable-patient-event
+
+# Redirect for Million Dollar Mistake
+Redirect 301 /blog/dont-make-this-multimillion-dollar-mistake/ https://www.startorthoboost.com/blog/million-dollar-mistake
+
+# Redirect for Growing Practice Without Spending More
+Redirect 301 /blog/3-ways-to-grow-your-practice-without-spending-more-money/ https://www.startorthoboost.com/blog/grow-practice-without-spending-more
