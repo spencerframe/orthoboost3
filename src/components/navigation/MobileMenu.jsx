@@ -51,7 +51,7 @@ export function MobileMenu({ isActive, navLinks }) {
                         <div>
                           <button
                             onClick={() => setExpandedItem(expandedItem === link.path ? null : link.path)}
-                            className="flex items-center justify-between w-full text-left"
+                            className="flex items-center justify-between w-full text-left text-lg"
                           >
                             <span className="text-gray-700 hover:text-blue-600 transition-colors">
                               {link.label}
@@ -69,18 +69,21 @@ export function MobileMenu({ isActive, navLinks }) {
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
-                                className="overflow-hidden"
+                                className="overflow-hidden mt-4"
                               >
-                                <div className="pl-4 mt-2 space-y-2">
+                                <div className="pl-4 pt-2 space-y-4">
                                   {link.children.map((child) => (
                                     <Link
                                       key={child.to}
                                       to={child.to}
-                                      className="flex items-center space-x-2 py-2"
+                                      className="flex items-start space-x-3"
                                       onClick={() => setIsOpen(false)}
                                     >
-                                      <child.icon className="w-5 h-5 text-gray-600" />
-                                      <span>{child.label}</span>
+                                      <child.icon className="mt-1.5 w-5 h-5 text-gray-600 flex-shrink-0" />
+                                      <div>
+                                        <p className="text-gray-700 hover:text-blue-600 transition-colors text-lg">{child.label}</p>
+                                        <p className="text-gray-500">{child.description}</p>
+                                      </div>
                                     </Link>
                                   ))}
                                 </div>
