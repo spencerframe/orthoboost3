@@ -1,4 +1,116 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/black-friday-braces-campaign/",
+      "destination": "/blog/black-friday-success",
+      "permanent": true
+    },
+    {
+      "source": "/blog/marketing-math-for-orthodontists/",
+      "destination": "/blog/marketing-math",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tiktok-ads-masterclass-for-orthodontists-webinar-replay/",
+      "destination": "/blog/tiktok-ads-vs-posts",
+      "permanent": true
+    },
+    {
+      "source": "/blog/4-ways-to-grow-your-orthodontic-practice-in-2024/",
+      "destination": "/blog/growth-strategies-2024",
+      "permanent": true
+    },
+    {
+      "source": "/blog/3-ways-your-office-can-give-back-to-the-community/",
+      "destination": "/blog/community-giving",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-planning-a-holiday-party-for-patients/",
+      "destination": "/blog/holiday-party-planning",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-take-awesome-patient-photos/",
+      "destination": "/blog/patient-photos-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-track-your-marketing-roi/",
+      "destination": "/blog/track-marketing-roi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/boost-post-vs-paid-ads-on-facebook/",
+      "destination": "/blog/facebook-boost-vs-ads",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10-awesome-raffles-to-boost-patient-referrals/",
+      "destination": "/blog/patient-referral-raffles",
+      "permanent": true
+    },
+    {
+      "source": "/blog/grow-your-practice-with-text-marketing/",
+      "destination": "/blog/text-marketing-growth",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-use-email-marketing-to-grow-your-practice/",
+      "destination": "/blog/email-marketing-growth",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-create-patient-loyalty/",
+      "destination": "/blog/create-patient-loyalty",
+      "permanent": true
+    },
+    {
+      "source": "/blog/does-your-office-smell-scent-marketing-101/",
+      "destination": "/blog/scent-marketing-101",
+      "permanent": true
+    },
+    {
+      "source": "/blog/get-more-new-patients-with-wow-boxes/",
+      "destination": "/blog/wow-boxes-new-patients",
+      "permanent": true
+    },
+    {
+      "source": "/blog/simple-tip-to-get-more-google-reviews/",
+      "destination": "/blog/get-more-google-reviews",
+      "permanent": true
+    },
+    {
+      "source": "/blog/increase-new-starts-by-10-instantly/",
+      "destination": "/blog/increase-new-starts",
+      "permanent": true
+    },
+    {
+      "source": "/blog/3-ways-to-increase-conversion-rates-in-the-consult-room/",
+      "destination": "/blog/increase-consult-room-conversion",
+      "permanent": true
+    },
+    {
+      "source": "/blog/practice-tip-how-to-organize-new-leads/",
+      "destination": "/blog/organize-new-leads",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-plan-a-profitable-patient-event/",
+      "destination": "/blog/profitable-patient-event",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dont-make-this-multimillion-dollar-mistake/",
+      "destination": "/blog/million-dollar-mistake",
+      "permanent": true
+    },
+    {
+      "source": "/blog/3-ways-to-grow-your-practice-without-spending-more-money/",
+      "destination": "/blog/grow-practice-without-spending-more",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
