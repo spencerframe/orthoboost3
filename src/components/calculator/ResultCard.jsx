@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { DollarSign, TrendingUp, PieChart } from 'lucide-react';
+import { TrendingUp, PieChart } from 'lucide-react';
 
-export function ResultCard({ currentRevenue, potentialGrowth, roi }) {
+export function ResultCard({ potentialGrowth, roi }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -13,16 +13,6 @@ export function ResultCard({ currentRevenue, potentialGrowth, roi }) {
       </h3>
 
       <div className="grid gap-6 md:grid-cols-1">
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-lg">
-          <div className="flex items-center space-x-3 mb-2">
-            <DollarSign className="w-5 h-5 text-blue-600" />
-            <h4 className="font-semibold">Current Monthly Revenue</h4>
-          </div>
-          <p className="text-3xl font-bold text-blue-600">
-            {typeof currentRevenue === 'number' ? `$${currentRevenue.toLocaleString()}` : currentRevenue}
-          </p>
-        </div>
-
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border-2 border-green-100">
           <div className="flex items-center space-x-3 mb-2">
             <TrendingUp className="w-5 h-5 text-blue-600" />
@@ -38,9 +28,16 @@ export function ResultCard({ currentRevenue, potentialGrowth, roi }) {
             <PieChart className="w-5 h-5 text-blue-600" />
             <h4 className="font-semibold">Forecasted ROI</h4>
           </div>
-          <p className="text-3xl font-bold text-purple-600">
-            {roi === '-' ? roi : `${roi}%`}
-          </p>
+          <div>
+            <p className="text-3xl font-bold text-purple-600">
+              {roi === '-' ? roi : `${(roi / 100).toFixed(1)}x`}
+            </p>
+            {roi !== '-' && (
+              <p className="text-sm text-gray-600 mt-1">
+                For each dollar you invest, we will get ${(roi / 100).toFixed(2)} dollars back.
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>

@@ -2,52 +2,53 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { PhoneCall } from 'lucide-react';
-import { RadioGroup } from './RadioGroup';
 import { ResultCard } from './ResultCard';
-import {
-  CURRENT_PATIENTS_OPTIONS,
-  REVENUE_OPTIONS,
-  BUDGET_OPTIONS,
-  getGrowthOptions
-} from './types';
+import { getGrowthOptions } from './types';
 
 export function ROICalculator() {
-  const [currentPatients, setCurrentPatients] = useState('');
-  const [revenue, setRevenue] = useState('');
-  const [budget, setBudget] = useState('');
-  const [growth, setGrowth] = useState('');
+  const [revenue, setRevenue] = useState(5000);
+  const [budget, setBudget] = useState(2000);
+  const [growth, setGrowth] = useState(2);
 
-  const isFormComplete = currentPatients && revenue && budget && growth;
+  const isFormComplete = revenue && budget && growth;
 
   // Reset growth when budget changes
   const handleBudgetChange = (newBudget) => {
     setBudget(newBudget);
-    setGrowth('');
+    // Set growth to minimum value for selected budget
+    const options = getGrowthOptions(getBudgetId(newBudget));
+    if (options.length) {
+      setGrowth(options[0].value.min);
+    }
+  };
+
+  const getBudgetId = (amount) => {
+    if (amount <= 2000) return 'A';
+    if (amount <= 4000) return 'B';
+    return 'C';
+  };
+
+  const getGrowthRange = () => {
+    if (!budget) return { min: 1, max: 5 };
+    const options = getGrowthOptions(getBudgetId(budget));
+    return {
+      min: options[0].value.min,
+      max: options[options.length - 1].value.max
+    };
   };
 
   const calculateResults = () => {
-    const currentOption = CURRENT_PATIENTS_OPTIONS.find(opt => opt.id === currentPatients);
-    const revenueOption = REVENUE_OPTIONS.find(opt => opt.id === revenue);
-    const growthOption = budget ? getGrowthOptions(budget).find(opt => opt.id === growth) : null;
-    const budgetOption = BUDGET_OPTIONS.find(opt => opt.id === budget);
-
-    // Calculate average monthly revenue
-    const currentRevenue = currentOption && revenueOption
-      ? ((currentOption.value.min + currentOption.value.max) / 2) * revenueOption.value
-      : '-';
-
     // Calculate potential growth
-    const potentialGrowth = growthOption && revenueOption
-      ? ((growthOption.value.min + growthOption.value.max) / 2) * revenueOption.value
+    const potentialGrowth = growth && revenue
+      ? growth * revenue
       : '-';
 
     // Calculate ROI
-    const roi = budgetOption && potentialGrowth !== '-'
-      ? Math.round((potentialGrowth / ((budgetOption.value.min + budgetOption.value.max) / 2)) * 100)
+    const roi = budget && potentialGrowth !== '-'
+      ? Math.round((potentialGrowth / budget) * 100)
       : '-';
 
     return {
-      currentRevenue,
       potentialGrowth,
       roi
     };
@@ -63,34 +64,28 @@ export function ROICalculator() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="space-y-4"
-          >
-            <h3 className="text-lg font-semibold mb-4">
-              Current Monthly New Patients
-            </h3>
-            <RadioGroup
-              options={CURRENT_PATIENTS_OPTIONS}
-              value={currentPatients}
-              onChange={setCurrentPatients}
-              name="currentPatients"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="space-y-4"
           >
             <h3 className="text-lg font-semibold mb-4">
-              Average Revenue Per Patient ($)
+              Average Revenue Per Patient
             </h3>
-            <RadioGroup
-              options={REVENUE_OPTIONS}
-              value={revenue}
-              onChange={setRevenue}
-              name="revenue"
-            />
+            <div className="space-y-2">
+              <input
+                type="range"
+                min="3000"
+                max="8000"
+                step="500"
+                value={revenue}
+                onChange={(e) => setRevenue(parseInt(e.target.value))}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              />
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>$3,000</span>
+                <span className="font-semibold text-blue-600">${revenue.toLocaleString()}</span>
+                <span>$8,000</span>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
@@ -100,14 +95,24 @@ export function ROICalculator() {
             className="space-y-4"
           >
             <h3 className="text-lg font-semibold mb-4">
-              Monthly Marketing Budget ($)
+              Monthly Marketing Budget
             </h3>
-            <RadioGroup
-              options={BUDGET_OPTIONS}
-              value={budget}
-              onChange={handleBudgetChange}
-              name="budget"
-            />
+            <div className="space-y-2">
+              <input
+                type="range"
+                min="1000"
+                max="10000"
+                step="1000"
+                value={budget}
+                onChange={(e) => handleBudgetChange(parseInt(e.target.value))}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              />
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>$1,000</span>
+                <span className="font-semibold text-blue-600">${budget.toLocaleString()}</span>
+                <span>$10,000</span>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
@@ -115,17 +120,28 @@ export function ROICalculator() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="space-y-4"
+            style={{ opacity: budget ? 1 : 0.5 }}
           >
             <h3 className="text-lg font-semibold mb-4">
-              Expected Monthly Patient Growth
+              Desired average monthly new starts
             </h3>
-            <RadioGroup
-              options={budget ? getGrowthOptions(budget) : getGrowthOptions('B')}
-              value={growth}
-              onChange={setGrowth}
-              name="growth"
-              disabled={!budget}
-            />
+            <div className="space-y-2">
+              <input
+                type="range"
+                min={getGrowthRange().min}
+                max={getGrowthRange().max}
+                step="1"
+                value={growth}
+                onChange={(e) => setGrowth(parseInt(e.target.value))}
+                disabled={!budget}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 disabled:opacity-50"
+              />
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>{getGrowthRange().min}</span>
+                <span className="font-semibold text-blue-600">{growth} new starts/month</span>
+                <span>{getGrowthRange().max}</span>
+              </div>
+            </div>
           </motion.div>
         </div>
 

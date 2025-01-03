@@ -1,14 +1,8 @@
 // ROI Calculator Types
-export const CURRENT_PATIENTS_OPTIONS = [
-  { id: 'A', label: '0-5', value: { min: 0, max: 5 } },
-  { id: 'B', label: '6-15', value: { min: 6, max: 15 } },
-  { id: 'C', label: '16+', value: { min: 16, max: 30 } }
-];
-
 export const REVENUE_OPTIONS = [
-  { id: 'A', label: '$4,000', value: 4000 },
-  { id: 'B', label: '$6,000', value: 6000 },
-  { id: 'C', label: '$8,000+', value: 8000 }
+  { id: 'A', label: '$3,500', value: 3500 },
+  { id: 'B', label: '$5,000', value: 5000 },
+  { id: 'C', label: '$6,000+', value: 6000 }
 ];
 
 export const BUDGET_OPTIONS = [
