@@ -18,6 +18,7 @@ import BlogPost from "./pages/BlogPost";
 import WebinarListPage from "./pages/WebinarListPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ROICalculatorPage from "./pages/ROICalculatorPage";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/webinars" element={<WebinarListPage />} />
           <Route path="/webinars/:slug" element={<WebinarPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/roi-calculator" element={<ROICalculatorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

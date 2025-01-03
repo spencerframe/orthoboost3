@@ -1,10 +1,17 @@
 import { BookOpen, Video, PlayCircle } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 import { getNextWebinar } from '@/utils/webinar-utils';
 
 export const getNavLinks = async () => {
   const nextWebinar = await getNextWebinar();
 
   const freeStuffChildren = [
+    {
+      icon: Calculator,
+      to: "/roi-calculator",
+      label: "ROI Calculator",
+      description: "Calculate your marketing potential",
+    },
     {
       icon: BookOpen,
       to: "/blog",
